@@ -1,4 +1,4 @@
-# mod_amoney
+# [AMoney](http://www.foto-s.ru/)
 
 Module Donate - Amoney for Joomla 3.1
 
