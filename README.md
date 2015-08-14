@@ -4,15 +4,15 @@ Module Donate - Amoney for Joomla! 2.5 and 3.x Version v1.1.0 with AJAX function
 
 # It supports payment systems
 
-Webmoney
-RBK Money
-YandexMoney
-PayPal 
-Skrill | Moneybookers
-ROBOKASSA
-LiqPay 
-SMScoin 
-SavingsBank 
+* Webmoney
+* RBK Money
+* YandexMoney
+* PayPal 
+* Skrill | Moneybookers
+* ROBOKASSA
+* LiqPay 
+* SMScoin 
+* SavingsBank 
 
 ## License
 
