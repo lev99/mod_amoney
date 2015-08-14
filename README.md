@@ -2,6 +2,10 @@
 
 Module Donate - Amoney for Joomla! 2.5 and 3.x Version v1.1.0 with AJAX functionality
 
+# Modification on the basis of:
+
+[The original Universal module Donate (Webmoney, Yandex, PayPal)](http://adeptsite.info/content/view/24/39/)
+
 # It supports payment systems
 
 * Webmoney
