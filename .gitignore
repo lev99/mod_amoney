@@ -318,6 +318,7 @@
 /language/en-GB/en-GB.lib_phputf8.sys.ini
 /language/en-GB/en-GB.lib_simplepie.sys.ini
 /language/en-GB/en-GB.com_media.ini
+/language/en-GB/en-GB.mod_amoney.ini
 /language/en-GB/en-GB.mod_finder.ini
 /language/en-GB/en-GB.com_messages.ini
 /language/en-GB/en-GB.mod_tags_popular.ini
@@ -393,6 +394,7 @@
 /language/en-GB/en-GB.xml
 /language/en-GB/index.html
 /language/en-GB/install.xml
+/language/ru-RU/ru-RU.mod_amoney.ini
 /language/overrides/*
 /language/index.html
 /libraries/cms.php
@@ -419,6 +421,7 @@
 /media/plg_system_highlight/*
 /media/system/*
 /media/index.html
+/modules/mod_amoney/*
 /modules/mod_articles_archive/*
 /modules/mod_articles_categories/*
 /modules/mod_articles_category/*
