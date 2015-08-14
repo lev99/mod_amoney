@@ -5,7 +5,7 @@ The module is designed to organize your site receiving donations (well, or just 
 
 # Modification on the basis of:
 
-[The original Universal module Donate (Webmoney, Yandex, PayPal)](http://adeptsite.info/content/view/24/39/)
+[The original Universal module Donate (Webmoney, Yandex, PayPal)](http://adeptsite.info/content/view/24/39/) for Joomla! 1.0 and 1.5 Version v1.1.0
 
 # It supports payment systems
 
