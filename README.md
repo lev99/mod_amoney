@@ -1,10 +1,18 @@
-# [AMoney for Joomla! 2.5 and 3.x](http://www.foto-s.ru/universal-module.html)
+# [AMoney](http://www.foto-s.ru/universal-module.html)
 
-Version v1.1.0 
+Module Donate - Amoney for Joomla! 2.5 and 3.x Version v1.1.0 with AJAX functionality
 
-Module Donate - Amoney for Joomla 3.1
+# It supports payment systems
 
-I lave :coffee: :pizza:, and :dancer:.
+Webmoney
+RBK Money
+YandexMoney
+PayPal 
+Skrill | Moneybookers
+ROBOKASSA
+LiqPay 
+SMScoin 
+SavingsBank 
 
 ## License
 
