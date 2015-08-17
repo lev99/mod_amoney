@@ -1,9 +1,11 @@
 <?php
 /**
- * version 1.1.0 2015
- * author Leonidas
- * copyright (C) 2010 Leonidas. All rights reserved.
- * license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ * @package     AMoney
+ * @subpackage  mod_amoney
+ * @version     3.0
+ * @author      Adeptus, adeptus@adeptsite.info
+ * @copyright   Copyright (C) 2010 Leonidas. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // no direct access
