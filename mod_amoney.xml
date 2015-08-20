@@ -7,7 +7,7 @@
 <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 <authorEmail>leonidas78@mail.ru</authorEmail> 
 <authorUrl>www.foto-s.ru</authorUrl>
-<version>1.1.0</version>
+<version>1.1.1</version>
 <description>MOD_AMONEY_V1.1</description>
 <files>
     <filename module="mod_amoney">mod_amoney.php</filename>
@@ -41,7 +41,7 @@
 	<filename>conf/css/index.html</filename>
 	</files>
 	<languages>
-        <language tag="en-GB">en-GB.mod_amoney.ini</language>
+                <language tag="en-GB">en-GB.mod_amoney.ini</language>
 		<language tag="ru-RU">ru-RU.mod_amoney.ini</language>
 	</languages>
 	<config>
@@ -86,8 +86,7 @@
 			label="MOD_AMONEY_CURRENT_AMOUNT_RAISED" description="MOD_AMONEY_THE_CURRENT_AMOUNT_RAISED" />
 	<field name="datename" type="text" default="Updated:" 
 			label="MOD_AMONEY_TEXT_UPDATED" description="MOD_AMONEY_TEXT_UPDATED_DESCRIPTION" />     	
-    <field name="date1" type="text" default="27/1/2009" 
-			label="MOD_AMONEY_DATE_LAST_UPDATE" description="MOD_AMONEY_DATE_LAST_UPDATE_DESCRIPTION" />
+    	<field name="mycalendar" type="calendar" default="27-10-2009" label="MOD_AMONEY_DATE_LAST_UPDATE" description="MOD_AMONEY_DATE_LAST_UPDATE_DESCRIPTION" format="%d-%m-%Y" />
 	<field type="spacer" name="myspacer3" hr="true" />
 	<field name="pretext" type="text" size="40" default="&#1041;&#1083;&#1072;&#1075;&#1086;&#1076;&#1072;&#1088;&#1085;&#1086;&#1089;&#1090;&#1100; &#1040;&#1074;&#1090;&#1086;&#1088;&#1091;"
 			label="MOD_AMONEY_INTRODUCTORY_TEXT" description=""  />
