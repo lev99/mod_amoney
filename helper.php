@@ -11,8 +11,8 @@
 ## Title............: AMoney                                                  ##
 ## Description......: Popular WebMoney module for Joomla CMS                  ##
 ## Author...........: Leonidas                                                ##
-## Version..........: 1.1.0                                                   ##
-## Created date.....: 10.08.2015                                              ##
+## Version..........: 1.1.1                                                   ##
+## Created date.....: 21.08.2015                                              ##
 ## Contact info.....: url: www.foto-s.ru / e-mail: leonidas78@mail.ru         ##
 ## Joomla Version...: 2.5.х and 3.1.x Stable and high                         ##
 ## Note.............: This script is a part of AMoney 1.0 package.            ##
@@ -83,7 +83,7 @@ $jammfadtogquery1='0';
 $datename = $params->get('datename', 'Updated:');
 $current1 = $params->get('current1', '3000');
 $goal1 = $params->get('goal1', '10000');
-$date1 = $params->get('date1', '27/1/2009');
+$mycalendar = $params->get('mycalendar', '27-10-2009');
 $whitebarheight = 100 - (($current1 / $goal1) * 100);
 $bulbpercent = (($current1 / $goal1) * 100);
 $rounded_number = round($bulbpercent);
@@ -95,7 +95,7 @@ $off_intrerst .= '<div class="karma3 gray" style="margin:0px auto 0px;">';
 $off_intrerst .= '<div class="red" style="width: '.$rounded_number.'%;float: right;"></div>';
 $off_intrerst .= '</div>';
 $off_intrerst .= '<div class="karma4" style="text-align:center">';
-$off_intrerst .= '<span class="letter">'.$datename.'&nbsp;&nbsp;'.$date1.'</span>';
+$off_intrerst .= '<span class="letter">'.$datename.'&nbsp;&nbsp;'.$mycalendar.'</span>';
 $off_intrerst .= '</div>';
 $off_intrerst .= '</div>';
 $off_intrerst .= '</div>';
