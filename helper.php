@@ -24,6 +24,7 @@ defined('_JEXEC') or die;
 
 // Global
 $mainframe = JFactory::getApplication();
+// Link Site
 $mosConfig_live_site = JURI::base( true ); 
 
 //css
