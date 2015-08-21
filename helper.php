@@ -63,9 +63,9 @@ $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css'
 $str2 = 'AMoney';
 $str1 = 'http://www.foto-s.ru/universal-module.html';
 $str4 = JText::_('MOD_AMONEY_VISIT_AUTHOR');
-$copcop = '<a rel="nofollow" href="http://www.foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
+$copcop = '<a rel="nofollow" href="http://foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 if ($params->get('copy')==1) {
-$copycopy='<a rel="nofollow" href="http://www.foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
+$copycopy='<a rel="nofollow" href="http://foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 $copy= $copycopy; }
 else { $copy=""; };
 $width_border = $params->get('width_border', '100');
