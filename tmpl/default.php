@@ -346,13 +346,13 @@ else if ($length == 2) {
 else if ($length == 3) {
   header("Location: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=".$donate_email."&item_name=".$wm_descpay1."&item_number=".$random_chars1."&no_shipping=1&no_note=1&currency_code=".$currency_code."&bn=PP%2dSubscriptionsBF&charset=UTF%2d8&a3=".$amount."%2e00&p3=1&t3=Y&src=1&sra=1&return=".$link_return."&cancel=".$link_cancel);
 }
-$currencies = array( 'CAD' => '$', 'USD' => '$', 'GBP' => '&pound;', 'AUD' => '$', 'JPY' => '&yen;', 'EUR' => '&euro;' );
+$currencies = array( 'RUB' => 'р', 'CAD' => '$', 'USD' => '$', 'GBP' => '&pound;', 'AUD' => '$', 'JPY' => '&yen;', 'EUR' => '&euro;' );
 echo "<div class=\"cont1\" style=\"text-align: center;\">";
 echo "<div id=\"ammh19\" class=\"ctynh15\" style=\"text-align:center;\"></div>";
 echo "</div>";
 echo "$off_intrerst";
 echo "<form id=\"paypal-pay\" action=\"".$_SERVER['REQUEST_URI']."\" method=\"post\" target=\"_blank\"><div class=\"cont1\" style=\"text-align: center;\">";
-if ($paypalval_on == 0) {
+if ($paypalval_on == 1) {
   $javaScript = <<< JAVASCRIPT
 <script type="text/javascript">
   function donateChangeCurrency( )
@@ -362,7 +362,7 @@ if ($paypalval_on == 0) {
     var currencyObj = document.getElementById( 'donate_symbol_currency' );
     if( currencyObj )
     {
-      var currencySymbols = { 'CAD': '$', 'USD': '$', 'GBP': '&pound;', 'AUD': '$', 'JPY': '&yen;', 'EUR': '&euro;' };
+      var currencySymbols = { 'RUB': 'р','CAD': '$', 'USD': '$', 'GBP': '&pound;', 'AUD': '$', 'JPY': '&yen;', 'EUR': '&euro;' };
       var currencySymbol = currencySymbols[ selection ];
       currencyObj.innerHTML = currencySymbol;
     }
@@ -376,10 +376,10 @@ JAVASCRIPT;
 <span id=\"donate_symbol_currency\" class=\"letter\">".$symbol."</span>
 <input id=\"paypal-pay-1\" class=\"paypal-pay-1\" type=\"text\" value=\"".$all_summpaypal."\" name=\"paypalamount\" size=\"3\" title=\"".JText::_('MOD_AMONEY_ENTER_AMOUNT')."\" $amofixed /></span>&nbsp;";
 }
-elseif ($paypalval_on == 1) {
+elseif ($paypalval_on == 0) {
   echo "<input type=\"hidden\" value=\"".$all_summpaypal."\" name=\"paypalamount\" />";
 }
-if ($paypalcur_on == 0) {
+if ($paypalcur_on == 1) {
   print( "<span class=\"focus-example\"><select id=\"paypal-pay-3\" class=\"paypal-pay-3\" name=\"paypalcurrency_code\" title=\"".JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY')."\" style=\"min-width:30px;\" onchange=\"donateChangeCurrency();\">
 <optgroup label=\"". JText::_('MOD_AMONEY_AMONEY_CHOICE')."\">" );
   foreach( $currencies as $currency => $dummy )
@@ -389,10 +389,10 @@ if ($paypalcur_on == 0) {
   }
   print( "</optgroup></select></span>\n" );
 }
-elseif ($paypalcur_on == 1) {
+elseif ($paypalcur_on == 0) {
   echo "<input type=\"hidden\" name=\"paypalcurrency_code\" value=\"".$paypalcur_val."\" />";
 }
-if ($donate_len == 0) {
+if ($donate_len == 1) {
   ?>
 <span class="focus-example">
   <select id="paypal-pay-2" class="paypal-pay-2" name="paypallength" title="<?php echo JText::_('MOD_AMONEY_CHOOSE_PERIODICITY'); ?>" style="min-width:30px;">
@@ -406,7 +406,7 @@ if ($donate_len == 0) {
 </span>
 	<?php
 	}
-	else if ($donate_len == 1) 
+	else if ($donate_len == 0) 
 	{?>
 	<input type="hidden" name="paypallength" value="<?php echo $paypallen_val;?>" />
 	<?php
