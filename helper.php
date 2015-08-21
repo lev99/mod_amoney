@@ -11,7 +11,7 @@
 ## Title............: AMoney                                                  ##
 ## Description......: Popular WebMoney module for Joomla CMS                  ##
 ## Author...........: Leonidas                                                ##
-## Version..........: 1.1.1                                                   ##
+## Version..........: 1.1.2                                                   ##
 ## Created date.....: 21.08.2015                                              ##
 ## Contact info.....: url: www.foto-s.ru / e-mail: leonidas78@mail.ru         ##
 ## Joomla Version...: 2.5.х and 3.1.x Stable and high                         ##
@@ -63,9 +63,9 @@ $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css'
 $str2 = 'AMoney';
 $str1 = 'http://www.foto-s.ru/universal-module.html';
 $str4 = JText::_('MOD_AMONEY_VISIT_AUTHOR');
-$copcop = '<a rel="nofollow" href="http://foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
+$copcop = '<a rel="nofollow" href="http://www.foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 if ($params->get('copy')==1) {
-$copycopy='<a rel="nofollow" href="http://foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
+$copycopy='<a rel="nofollow" href="http://www.foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 $copy= $copycopy; }
 else { $copy=""; };
 $width_border = $params->get('width_border', '100');
@@ -215,7 +215,7 @@ $all_summpaypal = $matches[1];
 } else {
 $all_summpaypal = $paypalval_val;
 };
-$donate_len = $params->get('donate_len','1');
+$donate_len = $params->get('donate_len','0');
 $paypallen_val = $params->get('paypallen_val');
 $link_cancel = $params->get('link_cancel',JURI::base());
 $link_return = $params->get('link_return',JURI::base());
