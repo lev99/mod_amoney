@@ -27,4 +27,4 @@ for Joomla! 1.0 and 1.5 NATIVE
 <b>AMoney</b> module designed for [Joomla!](http://www.joomla.org), designed by [Adeptus](http://adeptsite.info), released under the [GNU General Public License](http://www.gnu.org/copyleft/gpl.html).<br /><br />
 Copyright &copy; 2008 Adeptus. All rights reserved.<br />
 Copyright &copy; 2010 Leonidas, made under license from Creative Commons. All rights reserved.<br />
-(Last update: Augustus 10th, 2015 - Version 1.1.0)
+(Last update: Augustus 21th, 2015 - Version 1.1.1)
