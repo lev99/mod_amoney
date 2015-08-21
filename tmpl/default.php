@@ -357,7 +357,7 @@ if ($paypalval_on == 0) {
 <script type="text/javascript">
   function donateChangeCurrency( )
   {
-    var selectionObj = document.getElementById( 'donate_currency_code' );
+    var selectionObj = document.getElementById( 'paypal-pay-3' );
     var selection = selectionObj.value;
     var currencyObj = document.getElementById( 'donate_symbol_currency' );
     if( currencyObj )
@@ -373,7 +373,7 @@ JAVASCRIPT;
   echo "$javaScript <div class=\"cont1\" style=\"text-align: center;\"><label class=\"letter\">". JText::_('MOD_AMONEY_AMONEY_CURRENCY_SUM')."</label>
 </div>
 <span class=\"focus-example1\">
-<span class=\"letter\">".$symbol."</span>
+<span id=\"donate_symbol_currency\" class=\"letter\">".$symbol."</span>
 <input id=\"paypal-pay-1\" class=\"paypal-pay-1\" type=\"text\" value=\"".$all_summpaypal."\" name=\"paypalamount\" size=\"3\" title=\"".JText::_('MOD_AMONEY_ENTER_AMOUNT')."\" $amofixed /></span>&nbsp;";
 }
 elseif ($paypalval_on == 1) {
