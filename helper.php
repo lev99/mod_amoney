@@ -28,7 +28,7 @@ $mainframe = JFactory::getApplication();
 $mosConfig_live_site = JURI::base( true ); 
 
 //css
-$document =& JFactory::getDocument();
+$document = JFactory::getDocument();
 $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/templates.css');
 //button
 $am_button = $params->get('am_button', 'button');
@@ -49,12 +49,12 @@ $random_chars1 .= $characters[$amonykey];
 }
 //jQuery
 if ($params->get('off_jquery1')==1) {
-$document =& JFactory::getDocument();
+$document = JFactory::getDocument();
 $document->addScript($mosConfig_live_site.'modules/mod_amoney/js/jquery-2.1.4.js' );
 };
 //tipsy - Facebook-style tooltip plugin for jQuery
 if ($params->get('off_tipsy1')==1) {
-$document =& JFactory::getDocument();
+$document = JFactory::getDocument();
 $document->addScript($mosConfig_live_site.'modules/mod_amoney/js/jquery.tipsy.js' );
 $document->addScript($mosConfig_live_site.'modules/mod_amoney/js/tipsy.js' );
 $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css' );
