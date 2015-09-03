@@ -12,7 +12,7 @@
 ## Description......: Popular WebMoney module for Joomla CMS                  ##
 ## Author...........: Leonidas                                                ##
 ## Version..........: 1.1.2                                                   ##
-## Created date.....: 21.08.2015                                              ##
+## Created date.....: 03.09.2015                                              ##
 ## Contact info.....: url: www.foto-s.ru / e-mail: leonidas78@mail.ru         ##
 ## Joomla Version...: 2.5.х and 3.1.x Stable and high                         ##
 ## Note.............: This script is a part of AMoney 1.0 package.            ##
@@ -64,7 +64,7 @@ $str2 = 'AMoney';
 $str1 = 'http://www.foto-s.ru/universal-module.html';
 $str4 = JText::_('MOD_AMONEY_VISIT_AUTHOR');
 $copcop = '<a rel="nofollow" href="http://www.foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
-if ($params->get('copy')==1) {
+if ($params->get('exterlink')==1) {
 $copycopy='<a rel="nofollow" href="http://www.foto-s.ru/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 $copy= $copycopy; }
 else { $copy=""; };
@@ -106,7 +106,7 @@ $off_intrerst="";
 $pretext = $params->get('pretext', '&#1041;&#1083;&#1072;&#1075;&#1086;&#1076;&#1072;&#1088;&#1085;&#1086;&#1089;&#1090;&#1100; &#1040;&#1074;&#1090;&#1086;&#1088;&#1091;');
 $pretext5 = $params->get('pretext5', 'Donate');
 $btntxt = $params->get('btntxt', '&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100;');
-$exterlink = $params->get('exterlink', 0);
+$exterlink = $params->get('exterlink', 1);
 // Switch to a fixed amount
 if ($params->get('amofixed')==1) {
 $amofixed='readonly="readonly"'; }
