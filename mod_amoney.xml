@@ -524,13 +524,10 @@
 		<option value="1">JYes</option>
 		<option value="0">JNo</option>
 	</field>
-	<field name="copy" type="radio" class="btn-group" default="1" label="MOD_AMONEY_SHOW_LINK" description="MOD_AMONEY_SALTDTPI">
-			<option value="0">MOD_AMONEY_HIDE</option>
-			<option value="1">MOD_AMONEY_SHOW</option>
-	</field>
-	<field name="exterlink" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_EXTERNAL_LINK" description="">
-			<option value="1">JYes</option>
-			<option value="0">JNo</option>
+	<field name="exterlink" type="radio" class="btn-group btn-yesno" default="1" label="MOD_AMONEY_EXTERNAL_LINK" description="">
+			<option value="1">MOD_AMONEY_EXTERNAL_LINK_INTERNAL</option>
+			<option value="2">MOD_AMONEY_EXTERNAL_LINK_EXTERNAL</option>
+			<option value="0">MOD_AMONEY_EXTERNAL_LINK_DISABLE</option>
 	</field>
 	<field name="am_button" type="list" default="btn btn-primary" label="MOD_AMONEY_BUTTON" description="">
 			<option value="btn btn-primary">MOD_AMONEY_BUTTON_DEFAULT</option>
