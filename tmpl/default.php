@@ -665,7 +665,7 @@ win.document.close()
 	<?php
 	}?>
 <?php 
-	if ($exterlink)
+	if ($exterlink == 2)
 	{?>
 <div id="ampoweredby-external" style="text-align: center;">
 <?php echo $copcop;?>
