@@ -2,7 +2,7 @@
 <extension type="module" version="3.1" client="site" method="upgrade">
 <name>Donate</name>
 <author>Leonidas</author>
-<creationDate>August 2015</creationDate>
+<creationDate>September 2015</creationDate>
 <copyright>Copyright (C) 2008 Adeptus. All rights reserved.</copyright>
 <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 <authorEmail>leonidas78@mail.ru</authorEmail> 
