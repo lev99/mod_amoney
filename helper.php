@@ -111,6 +111,10 @@ $exterlink = $params->get('exterlink', 1);
 if ($params->get('amofixed')==1) {
 $amofixed='readonly="readonly"'; }
 else { $amofixed=""; };
+////////////////////////////////
+$min_summallin = $params->get('min_summallin', '0');
+$max_summallin = $params->get('max_summallin', '100');
+$step_summallin = $params->get('step_summallin','0.01');
 // Webmoney
 $use_wm = $params->get('use_wm', 1);
 $use_p1 = $params->get('use_p1', 1);
@@ -124,6 +128,7 @@ $wmu = $params->get('wmu','U000000000000');
 $use_p5 = $params->get('use_p5', 1);
 $wmb = $params->get('wmb','B000000000000');
 $wm_summ = $params->get('wm_summ', '10');
+$wm_cur_val = $params->get('wm_cur_val');
 if ($params->get('off_znahsum')==1) {
 $document = JFactory::getDocument();
 $buffer=$document->getBuffer(component);
@@ -133,8 +138,8 @@ $all_summwm = $matches[1];
 } else {
 $all_summwm = $wm_summ;
 };
-$wm_successurl = $params->get('wm_successurl', JURI::base());
-$wm_errorurl = $params->get('wm_errorurl', JURI::base());
+$wm_successurl = $params->get('wm_successurl', JURI::base( true ));
+$wm_errorurl = $params->get('wm_errorurl', JURI::base( true ));
 $wm_url_adds = "https://merchant.webmoney.ru/lmi/payment.asp";
 $wm_descpay = $params->get('wm_descpay','Gratitude to the Author');
 $mmdescription = $params->get('mmdescription','Order in this store-syakom');
@@ -143,7 +148,7 @@ $egoldinfo = $params->get('egoldinfo','');
 if ($params->get('gost5')==1) {
 $gost5 = array(
 "А"=>"A","Б"=>"B","В"=>"V","Г"=>"G","Д"=>"D","Е"=>"E","Ё"=>"YE","Ж"=>"ZH",
-"З"=>"Z","И"=>"I","Й"=>"YI","К"=>"K","Л"=>"L","М"=>"M","Н"=>"N","О"=>"O",
+"З"=>"Z","И"=>"I","Й"=>"YI","К"=>"K","Л"=>"L","М"=>"M","Н"=>"N","О"=>"O",
 "П"=>"P","Р"=>"R","С"=>"S","Т"=>"T","У"=>"U","Ф"=>"F","Х"=>"H","Ц"=>"TS",
 "Ч"=>"CH","Ш"=>"SH","Щ"=>"SCH","Ъ"=>"","Ы"=>"Y","Ь"=>"","Э"=>"JE","Ю"=>"YU",
 "Я"=>"YA","а"=>"a","б"=>"b","в"=>"v","г"=>"g","д"=>"d","е"=>"e","ё"=>"ye",
@@ -180,7 +185,7 @@ $all_summrupay = $matches[1];
 $all_summrupay = $rupay_summ;
 };
 $rupay_url_adds = "https://rbkmoney.ru/acceptpurchase.aspx";
-$rupay_successurl = $params->get('rupay_successurl', JURI::base());
+$rupay_successurl = $params->get('rupay_successurl', JURI::base( true ));
 // Yandex
 $use_yandex = $params->get('use_yandex', 0);
 $yandex = $params->get('yandex','00000000000000');
@@ -197,7 +202,7 @@ $all_summyandex = $matches[1];
 $all_summyandex = $yandex_summ_mm_mm;
 };
 $yandex_url_adds = "https://money.yandex.ru/charity.xml";
-$yandex_successurl = $params->get('yandex_successurl', JURI::base());
+$yandex_successurl = $params->get('yandex_successurl', JURI::base( true ));
 // PayPal
 $use_paypal = $params->get('use_paypal', 0);
 $donate_email = $params->get('paypal_email','alex1962@donpac.ru');
@@ -217,8 +222,8 @@ $all_summpaypal = $paypalval_val;
 };
 $donate_len = $params->get('donate_len','0');
 $paypallen_val = $params->get('paypallen_val');
-$link_cancel = $params->get('link_cancel',JURI::base());
-$link_return = $params->get('link_return',JURI::base());
+$link_cancel = $params->get('link_cancel',JURI::base( true ));
+$link_return = $params->get('link_return',JURI::base( true ));
 // MoneyBookers
 $use_moneybookers = $params->get('use_moneybookers', 0);
 $choose_cur1	= $params->def( 'choose_cur1', 0 );
@@ -235,7 +240,7 @@ $all_summmoneybookers = $matches[1];
 $all_summmoneybookers = $moneybookers_summ;
 };
 $moneybookers_url_adds = "https://www.moneybookers.com/app/payment.pl";
-$moneybookers_successurl = $params->get('moneybookers_successurl', JURI::base());
+$moneybookers_successurl = $params->get('moneybookers_successurl', JURI::base( true ));
 $country1	= $params->def( 'country1', 'US' );
 $curr1 = array();
 $curr1[] = array('code'=>'USD', 'title'=>'USD - $');
@@ -298,8 +303,8 @@ $liq1_currency = strtr($liqpay_currency, $gost3);
 $gost4 = array( '0' => '&#8372;', '1' => '&euro;', '2' => '$', '3' => 'р' );
 $liq1_currenc1 = strtr($liqpay_currency, $gost4);
 $method='card,liqpay,delayed';
-$result_url = $params->get('result_url', JURI::base());
-$server_url = $params->get('server_url', JURI::base());
+$result_url = $params->get('result_url', JURI::base( true ));
+$server_url = $params->get('server_url', JURI::base( true ));
 if ($params->get('switch_fixed')==1) {
 $str = "<request>";
 $str .= "<version>1.2</version>";
@@ -319,7 +324,7 @@ $switch_fixed = '<div class="cont1" style="text-align: center;">';
 $switch_fixed .= '<span class="letter">'.JText::_('MOD_AMONEY_FIXED_AMOUNT').'</span>';
 $switch_fixed .= '</div>';
 $switch_fixed .= '<div class="focus-example cont1" style="text-align: center;">
-<input id="liqpay-pay-1" class="liqpay-pay-1" type="text" size="3" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" readonly="readonly" />&nbsp;<span class="letter">'.$liq1_currency.'&nbsp;-&nbsp;'.$liq1_currenc1.'</span>
+<div class="input-append"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" min="'.$min_summallin.'" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" readonly="readonly" /><span class="add-on">'.$liq1_currency.'&nbsp;-&nbsp;'.$liq1_currenc1.'</span></div>
 <input type="hidden" name="operation_xml" value="'.$operation_xml.'"/>
 <input type="hidden" name="signature" value="'.$signature.'"/>
 </div>';
@@ -330,7 +335,7 @@ $switch_fixed .= '</div>';
 $switch_fixed .= '<div class="cont1" style="text-align: center;">';
 $switch_fixed .= '<input type="hidden" name="version" value="1.2"/>';
 $switch_fixed .= '<input type="hidden" name="merchant_id" value="'.$merchant_id.'"/>';
-$switch_fixed .= '<span class="focus-example1"><input id="liqpay-pay-1" class="liqpay-pay-1" type="text" size="3" name="amount" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></span>&nbsp;';
+$switch_fixed .= '<span class="focus-example1"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" name="amount" min="'.$min_summallin.'" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></span>&nbsp;';
 $switch_fixed .= '<span class="focus-example">';
 $switch_fixed .= '<select id="liqpay-pay-2" class="liqpay-pay-2" name="currency" title="'.JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY').'" style="min-width:30px;">';
 $switch_fixed .= '<optgroup label="'.JText::_('MOD_AMONEY_AMONEY_CHOICE').'">';
@@ -363,7 +368,7 @@ $lqsignature = base64_encode(sha1($signature.$xml.$signature, 1));
 // SMScoin
 $use_smscoin = $params->get('use_smscoin', 0);
 $smscoin_id = $params->get('smscoin_id','000000');
-$don_but = JURI::base().'modules/mod_amoney/images/4.png';
+$don_but = JURI::base( true ).'modules/mod_amoney/images/4.png';
 $smscoin_lan = $params->get('smscoin_lan','russian');
 // CberBank
 $use_cbank = $params->get('use_cbank', 0);
