@@ -92,7 +92,14 @@
 			label="MOD_AMONEY_INTRODUCTORY_TEXT" description=""  />
 	<field name="btntxt" type="text" default="&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100;"
 			label="MOD_AMONEY_TEXT_SEND_BUTTON" description=""  />
-    <field type="spacer" name="myspacer4" hr="true" />
+	<field type="spacer" name="myspacer4" hr="true" />
+	<field name="min_summallin" type="text" size="5" default="0" 
+			label="MOD_AMONEY_TOTAL_DONATIONS_MINALL" description="MOD_AMONEY_TOTAL_DONATIONS_MINALL_DESCRIPTION" />
+	<field name="max_summallin" type="text" size="5" default="100" 
+			label="MOD_AMONEY_TOTAL_DONATIONS_MAXALL" description="MOD_AMONEY_TOTAL_DONATIONS_MAXALL_DESCRIPTION" />
+	<field name="step_summallin" type="text" size="5" default="0.01" 
+			label="MOD_AMONEY_TOTAL_DONATIONS_STEPSALL" description="MOD_AMONEY_TOTAL_DONATIONS_STEPSALL_DESCRIPTION" />
+    <field type="spacer" name="myspacer5" hr="true" />
 	<field name="use_wm" type="radio" class="btn-group btn-yesno" default="1" label="MOD_AMONEY_USE_WEBMONEY" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -129,13 +136,20 @@
 			label="MOD_AMONEY_NUMBER_PURSES_WMB" description="MOD_AMONEY_YOURNUMBERBELARUSRUB" />
 	<field name="wm_summ" type="text" size="5" default="10" 
 			label="MOD_AMONEY_TOTAL_DONATIONS" description="MOD_AMONEY_TOTALDONATIONSDEFAULT" />
+	<field name="wm_cur_val" type="list" default="WMR" label="MOD_AMONEY_CURRENCY_DEFAULT" description="">
+			<option value='WMR'>WMR "P"</option>
+			<option value='WMZ'>WMZ "$"</option>
+			<option value='WME'>WME "€"</option>
+			<option value='WMU'>WMU "₴"</option>
+			<option value='WMU'>WMU "Br"</option>
+	</field>
 	<field name="wm_successurl" type="text" size="40" default="modules/mod_amoney/conf/success.html" 
 			label="MOD_AMONEY_URL_SUCCESSFUL_OPERATION" description="MOD_AMONEY_ADDRESPAYMENT" />
 	<field name="wm_errorurl" type="text" size="40" default="modules/mod_amoney/conf/fail.html" 
 			label="MOD_AMONEY_URL_ERRORS_OF_OPERATION" description="MOD_AMONEY_ADDRESERRORSMENT" />
 	<field name="wm_descpay" type="textarea" cols="20" rows="5" default="Gratitude to the Author" 
 			label="MOD_AMONEY_DESCRIPTION_OF_PAYMENT" description="MOD_AMONEY_DESCRIPTIONOFPAYMENTINFO" />
-    <field type="spacer" name="myspacer5" hr="true" />
+    <field type="spacer" name="myspacer6" hr="true" />
 	<field name="use_rupay" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_USE_RBKMONEY" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -148,7 +162,7 @@
 			label="MOD_AMONEY_TOTAL_DONATIONS" description="MOD_AMONEY_TOTALDONATIONSDEFAULT" />
 	<field name="rupay_successurl" type="text" size="40" default="http://www.yoursite.com" 
 			label="MOD_AMONEY_LINK_TO_WEB_SITE" description="MOD_AMONEY_INDICATEWEBSITEADDRESS" />
-    <field type="spacer" name="myspacer6" hr="true" />
+    <field type="spacer" name="myspacer7" hr="true" />
 	<field name="use_yandex" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_USE_YANDEXMONEY" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -159,7 +173,7 @@
 			label="MOD_AMONEY_TOTAL_DONATIONS" description="MOD_AMONEY_TOTALDONATIONSDEFAULT" />
 	<field name="yandex_successurl" type="text" size="40" default="http://www.yoursite.com" 
 			label="MOD_AMONEY_LINK_TO_WEB_SITE" description="MOD_AMONEY_INDICATEWEBSITEADDRESS" />
-    <field type="spacer" name="myspacer7" hr="true" />			
+    <field type="spacer" name="myspacer8" hr="true" />			
 	<field name="use_paypal" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_USING_PAYPAL" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -185,7 +199,7 @@
 			<option value="0">JNo</option>
 	</field>
 	<field name="paypalcur_val" type="list" default="USD" label="MOD_AMONEY_CURRENCY_DEFAULT" description="">
-			<option value='RUB'>RUB "р"</option>
+			<option value='RUB'>RUB "P"</option>
 			<option value='USD'>USD "$"</option>
 			<option value='EUR'>EUR "€"</option>
 			<option value='CAD'>CAD "$"</option>
@@ -201,7 +215,7 @@
 			label="MOD_AMONEY_URL_SUCCESSFUL_OPERATION" description="MOD_AMONEY_ADDRESPAYMENT"/>
     <field name="link_cancel" type="text" size="40" default="modules/mod_amoney/conf/fail.html" 
 			label="MOD_AMONEY_URL_ERRORS_OF_OPERATION" description="MOD_AMONEY_ADDRESERRORSMENT"/>
-    <field type="spacer" name="myspacer8" hr="true" />		
+    <field type="spacer" name="myspacer9" hr="true" />		
 	<field name="use_moneybookers" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_USING_PAYPAL2" description="">
 			<option value="0">JNo</option>
 			<option value="1">JYes</option>
@@ -429,7 +443,7 @@
 			label="Pay to Email" description="MOD_AMONEY_PAYPALINFO" />
     <field name="moneybookers_successurl" type="text" size="40" default="http://www.nnea.net/thank-you" 
 			label="MOD_AMONEY_URL_SUCCESSFUL_OPERATION" description="MOD_AMONEY_ADDRESPAYMENT"/>
-    <field type="spacer" name="myspacer9" hr="true" />
+    <field type="spacer" name="myspacer10" hr="true" />
 	<field name="use_robox" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_ROBOX_INCLUDE" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -444,7 +458,7 @@
 			<option value="en">English</option>
 			<option value="ru">Russian</option>
 	</field>
-	<field type="spacer" name="myspacer10" hr="true" />	
+	<field type="spacer" name="myspacer11" hr="true" />	
 	<field name="use_liqpay" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_LIQPAY_INCLUDE" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -471,7 +485,7 @@
 			label="MOD_AMONEY_URL_SUCCESSFUL_OPERATION" description="MOD_AMONEY_ADDRESPAYMENT"/>
     <field name="result_url" type="text" size="40" default="modules/mod_amoney/conf/fail.html" 
 			label="MOD_AMONEY_URL_ERRORS_OF_OPERATION" description="MOD_AMONEY_ADDRESERRORSMENT"/>
-    <field type="spacer" name="myspacer11" hr="true" />
+    <field type="spacer" name="myspacer12" hr="true" />
 	<field name="use_smscoin" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_SMSCOIN_INCLUDE" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -492,7 +506,7 @@
 			    <option value="spanish">MOD_AMONEY_SMSCOIN_SPANISH</option>
 			    <option value="ukrainian">MOD_AMONEY_SMSCOIN_UKRAINIAN</option>
 	</field>
-    <field type="spacer" name="myspacer12" hr="true" />
+    <field type="spacer" name="myspacer13" hr="true" />
 	<field name="use_cbank" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_1" description="">
 			<option value="1">JYes</option>
 			<option value="0">JNo</option>
@@ -519,7 +533,7 @@
 			label="MOD_AMONEY_14" description="" />
 	<field name="cbank_rub" type="text" size="17" default="0 &#1088;&#1091;&#1073;. 00 &#1082;&#1086;&#1087;." 
 			label="MOD_AMONEY_16" description="" />
-    <field type="spacer" name="myspacer13" hr="true" />
+    <field type="spacer" name="myspacer14" hr="true" />
 	<field name="off_znahsum" type="radio" class="btn-group btn-yesno" default="0" label="Use the amount of content?" description="">
 		<option value="1">JYes</option>
 		<option value="0">JNo</option>
