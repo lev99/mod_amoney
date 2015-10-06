@@ -134,55 +134,88 @@ jQuery(function($) {
 <div id="amoney1" class="amoney-mod1" style="text-align: center;">
 		<span class="panel1"><a class="south" style="margin:3px;text-decoration: none;" onclick="hide_all()" title="<?php echo JText::_('MOD_AMONEY_HIDEALL'); ?>"><?php echo $pretext;?></a></span>
 	</div>
-	<div id="amoney2" class="amoney-payment" style="text-align: center;">
+<div id="amoney2" class="amoney-payment" style="text-align: center;">
 	<!-- Link Edit  -->
 	<?php
 	}
-	if ($use_wm)
-	{?>
-		<a id="ammh1" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_WEBMONEY'); ?>" onclick="show_wm()"></a>
-	<?php
-	}
-	if ($use_rupay)
-	{?>
-		<a id="ammh2" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_RBKMONEY'); ?>" onclick="show_rupay()"></a>
-	<?php
-	}
-	if ($use_yandex)
-	{?>
-		<a id="ammh3" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_YANDEX'); ?>" onclick="show_yandex()" ></a>
-	<?php
-	}
-	if ($use_paypal)
-	{?>
-		<a id="ammh5" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_PAYPAL'); ?>" onclick="show_paypal()"></a>
-	<?php
-	}
-	if ($use_moneybookers)
-	{?>
-		<a id="ammh7" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_MONBOOK'); ?>" onclick="show_moneybookers()"></a>
-	<?php
-	}
-	if ($use_robox)
-	{?>
-		<a id="ammh8" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_ROBOKASSA'); ?>" onclick="show_robox()"></a>
-	<?php
-	}
-	if ($use_liqpay)
-	{?>
-		<a id="ammh12" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_LIQPAY'); ?>" onclick="show_liqpay()"></a>
-	<?php
-	}
-	if ($use_smscoin)
-	{?>
-		<a id="ammh13" style="margin:3px;" class="south" title="<?php echo JText::_('MOD_AMONEY_SMSCOIN'); ?>" onclick="show_smscoin()"></a>
-	<?php
-	}
-	if ($use_cbank)
-	{?>
-		<a id="ammh14" style="margin:3px;" class="south" title="CberBank" onclick="show_cbank()"></a>
-	<?php
-	}?>
+	$ammhamoney = array();
+		if ($use_wm)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh1',
+				"title" => 'MOD_AMONEY_WEBMONEY',
+				"foo" => 'show_wm',
+			);
+		}
+		if ($use_rupay)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh2',
+				"title" => 'MOD_AMONEY_RBKMONEY',
+				"foo" => 'show_rupay',
+			);
+		}
+		if ($use_yandex)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh3',
+				"title" => 'MOD_AMONEY_YANDEX',
+				"foo" => 'show_yandex',
+			);
+		}
+		if ($use_paypal)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh5',
+				"title" => 'MOD_AMONEY_PAYPAL',
+				"foo" => 'show_paypal',
+			);
+		}
+		if ($use_moneybookers)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh7',
+				"title" => 'MOD_AMONEY_MONBOOK',
+				"foo" => 'show_moneybookers',
+			);
+		}
+		if ($use_robox)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh8',
+				"title" => 'MOD_AMONEY_ROBOKASSA',
+				"foo" => 'show_robox',
+			);
+		}
+		if ($use_liqpay)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh12',
+				"title" => 'MOD_AMONEY_LIQPAY',
+				"foo" => 'show_liqpay',
+			);
+		}
+		if ($use_smscoin)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh13',
+				"title" => 'MOD_AMONEY_SMSCOIN',
+				"foo" => 'show_smscoin',
+			);
+		} 
+		if ($use_cbank)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh14',
+				"title" => 'MOD_AMONEY_CBERBANK',
+				"foo" => 'show_cbank',
+			);
+		} 
+	foreach ($ammhamoney as $item) {
+?>
+     <a id="<?= $item['ID'] ?>" style="margin:3px;" class="south" title="<?php echo JText::_($item['title']); ?>" onclick="<?= $item['foo'] ?>()"></a>
+<?php
+}?>
 	<!-- Link Edit -->
 </div>
 </div>
@@ -197,45 +230,58 @@ jQuery(function($) {
 				</div>
 					<?php echo $off_intrerst; ?>
 				<div class="cont1" style="text-align: center;">
+<script type="text/javascript">
+  function donateChangeCurrency1( )
+  {
+    var selectionObj = document.getElementById( 'wm-pay-2' );
+    var selection = selectionObj.value;
+    var currencyObj = document.getElementById( 'donate_wm' );
+    if( currencyObj )
+    {
+      var currencySymbols1 = { '<?php echo $wmnum1; ?>': 'P','<?php echo $wmnum2; ?>': '$', '<?php echo $wmnum3; ?>': '&euro;', '<?php echo $wmnum4; ?>': '&#8372;', '<?php echo $wmnum5; ?>': 'Br' };
+      var currencySymbol = currencySymbols1[ selection ];
+      currencyObj.innerHTML = currencySymbol;
+    }
+  }
+  </script>
+  <?php
+$currencies1 = array( 'WMR' => 'P', 'WMZ' => '$', 'WME' => '&euro;', 'WMU' => '&#8372;', 'WMB' => 'Br' );
+$symbol1 = $currencies1[ $wm_cur_val ];
+  ?>
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_AMONEY_CURRENCY_SUM'); ?></span>
 				</div>
 				<div class="cont1" style="text-align: center;">
-<span class="focus-example1">
-					<input id="wm-pay-1" class="wm-pay-1" type="text" name="LMI_PAYMENT_AMOUNT" size="3" value="<?php echo $all_summwm;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
-</span>
-<span class="focus-example">
-				<select id="wm-pay-2" class="wm-pay-2" name="LMI_PAYEE_PURSE"  title="<?php echo JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY'); ?>" style="min-width:30px;" >
-					<optgroup label="<?php echo JText::_('MOD_AMONEY_AMONEY_CHOICE'); ?>">	
-	<?php
-	if ($use_p1)
-	{?>
-						<option value="<?php echo $wmnum1;?>"><?php echo $wmtype1;?></option>
-	<?php
-	}
-	if ($use_p2)
-	{?>
-						<option value="<?php echo $wmnum2;?>"><?php echo $wmtype2;?></option>
-	<?php
-	}
-	if ($use_p3)
-	{?>
-						<option value="<?php echo $wmnum3;?>"><?php echo $wmtype3;?></option>
-	<?php
-	}
-	if ($use_p4)
-	{?>
-						<option value="<?php echo $wmnum4;?>"><?php echo $wmtype4;?></option>
-	<?php
-	}
-	if ($use_p5)
-	{?>
-						<option value="<?php echo $wmnum5;?>"><?php echo $wmtype5;?></option>
-	<?php
-	}?>
-					</optgroup> 
-				</select>
+<div class="input-prepend"><span class="focus-example1">
+<span id="donate_wm" class="add-on"><?php echo $symbol1; ?></span>
+					<input id="wm-pay-1" class="wm-pay-1" type="number" name="LMI_PAYMENT_AMOUNT" size="3" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summwm;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
+</span></div>
+<?php
+if ($use_p1) {
+  $areas["$wmnum1"] = $wmtype1; 
+  }
+if ($use_p2) {
+  $areas["$wmnum2"] = $wmtype2; 
+  }
+if ($use_p3) {
+  $areas["$wmnum3"] = $wmtype3; 
+  }
+if ($use_p4) {
+  $areas["$wmnum4"] = $wmtype4;
+  }
+if ($use_p5) {
+  $areas["$wmnum5"] = $wmtype5;
+}
 
-</span>
+print( "<span class=\"focus-example\"><select id=\"wm-pay-2\" class=\"wm-pay-2\" name=\"LMI_PAYEE_PURSE\" title=\"".JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY')."\" style=\"min-width:30px;\" onchange=\"donateChangeCurrency1();\">
+<optgroup label=\"". JText::_('MOD_AMONEY_AMONEY_CHOICE')."\">" );
+foreach( $areas as $currency1 => $dummy1 )
+  {
+    $selected1 = ( $dummy1 == $wm_cur_val ) ? " selected=\"selected\"" : "";
+print( "<option value=\"$currency1\"$selected1>$dummy1</option>\n" );
+  }
+print( "</optgroup></select></span>\n" );
+  ?>
+
 					<input type="hidden" name="LMI_PAYMENT_DESC" value="<?php echo $wm_descpay1;?>" />
 					<input type="hidden" name="LMI_PAYMENT_NO" value="<?php echo $random_chars1; ?>" />
 					<input type="hidden" name="LMI_SIM_MODE" value="0" />
@@ -267,7 +313,9 @@ jQuery(function($) {
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT1'); ?></span>
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
-						<input id="rupay-pay-1" class="rupay-pay-1" type="text" name="recipientAmount" size="3" value="<?php echo $all_summrupay;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />&nbsp;<span class="letter"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL'); ?></span>
+				<div class="input-append">
+						<input id="rupay-pay-1" class="rupay-pay-1" type="number" name="recipientAmount" size="3" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summrupay;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> /><span class="add-on"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL'); ?></span>
+						</div>
 						<input type="hidden" name="eshopId" value="<?php echo $rupay_submit;?>" />
 						<input type="hidden" name="orderId" value="<?php echo $random_chars1; ?>" />
 						<input type="hidden" name="serviceName" value="<?php echo $random_chars1; ?>" />
@@ -299,7 +347,8 @@ jQuery(function($) {
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT1');?></span>
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
-					<input id="yandex-pay-1" class="yandex-pay-1" type="text" name="CompanySum" size="20" value="<?php echo $all_summyandex;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />&nbsp;<span class="letter"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL');?></span>
+				<div class="input-append">
+					<input id="yandex-pay-1" class="yandex-pay-1" type="number" name="CompanySum" size="20" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summyandex;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> /><span class="add-on"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL');?></span></div>
 					<input type="hidden" name="to" value="<?php echo $yandex;?>" />
 					<input type="hidden" name="CompanyName" value="<?php echo $wm_descpay1;?>" />
 					<input type="hidden" name="CompanyLink" value="<?php echo $yandex_successurl;?>" />
@@ -346,7 +395,7 @@ else if ($length == 2) {
 else if ($length == 3) {
   header("Location: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=".$donate_email."&item_name=".$wm_descpay1."&item_number=".$random_chars1."&no_shipping=1&no_note=1&currency_code=".$currency_code."&bn=PP%2dSubscriptionsBF&charset=UTF%2d8&a3=".$amount."%2e00&p3=1&t3=Y&src=1&sra=1&return=".$link_return."&cancel=".$link_cancel);
 }
-$currencies = array( 'RUB' => 'р', 'CAD' => '$', 'USD' => '$', 'GBP' => '&pound;', 'AUD' => '$', 'JPY' => '&yen;', 'EUR' => '&euro;' );
+$currencies = array( 'RUB' => 'P', 'CAD' => '$', 'USD' => '$', 'GBP' => '&pound;', 'AUD' => '$', 'JPY' => '&yen;', 'EUR' => '&euro;' );
 echo "<div class=\"cont1\" style=\"text-align: center;\">";
 echo "<div id=\"ammh19\" class=\"ctynh15\" style=\"text-align:center;\"></div>";
 echo "</div>";
@@ -362,7 +411,7 @@ if ($paypalval_on == 1) {
     var currencyObj = document.getElementById( 'donate_symbol_currency' );
     if( currencyObj )
     {
-      var currencySymbols = { 'RUB': 'р','CAD': '$', 'USD': '$', 'GBP': '&pound;', 'AUD': '$', 'JPY': '&yen;', 'EUR': '&euro;' };
+      var currencySymbols = { 'RUB': 'P','CAD': '$', 'USD': '$', 'GBP': '&pound;', 'AUD': '$', 'JPY': '&yen;', 'EUR': '&euro;' };
       var currencySymbol = currencySymbols[ selection ];
       currencyObj.innerHTML = currencySymbol;
     }
@@ -372,9 +421,9 @@ JAVASCRIPT;
   $symbol = $currencies[ $paypalcur_val ];
   echo "$javaScript <div class=\"cont1\" style=\"text-align: center;\"><label class=\"letter\">". JText::_('MOD_AMONEY_AMONEY_CURRENCY_SUM')."</label>
 </div>
-<span class=\"focus-example1\">
-<span id=\"donate_symbol_currency\" class=\"letter\">".$symbol."</span>
-<input id=\"paypal-pay-1\" class=\"paypal-pay-1\" type=\"text\" value=\"".$all_summpaypal."\" name=\"paypalamount\" size=\"3\" title=\"".JText::_('MOD_AMONEY_ENTER_AMOUNT')."\" $amofixed /></span>&nbsp;";
+<div class=\"input-prepend\"><span class=\"focus-example1\">
+<span id=\"donate_symbol_currency\" class=\"add-on\">".$symbol."</span>
+<input id=\"paypal-pay-1\" class=\"paypal-pay-1\" type=\"number\" min=\"".$min_summallin."\" max=\"".$max_summallin."\" step=\"".$step_summallin."\" value=\"".$all_summpaypal."\" name=\"paypalamount\" size=\"3\" title=\"".JText::_('MOD_AMONEY_ENTER_AMOUNT')."\" $amofixed /></span></div>&nbsp;";
 }
 elseif ($paypalval_on == 0) {
   echo "<input type=\"hidden\" value=\"".$all_summpaypal."\" name=\"paypalamount\" />";
@@ -437,7 +486,7 @@ if ($donate_len == 1) {
 				<div class="cont1" style="text-align: center;">
 <?php if ($choose_cur1) { ?>
 <span class="focus-example1">
-			<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="text" name="amount" size="3" value="<?php echo $all_summmoneybookers;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
+			<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="number" name="amount" size="3" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summmoneybookers;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
 </span>
 <span class="focus-example">
 			<select id="moneybookers-pay-2" class="moneybookers-pay-2" name="currency" title="<?php echo JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY'); ?>" style="min-width:30px;">
@@ -449,8 +498,8 @@ if ($donate_len == 1) {
 			?>
 			</optgroup>
 			</select></span>
-<?php } else echo '<span class="focus-example"><span class="letter">'.$currency_moneybookers.'</span>&nbsp;&nbsp;
-					<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="text" name="amount" size="3" value="'.$all_summmoneybookers.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' />
+<?php } else echo '<div class="input-prepend"><span class="focus-example"><span class="add-on">'.$currency_moneybookers.'</span>
+					<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="number" name="amount" size="3" min="'.$min_summallin.'" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summmoneybookers.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></div>
 </span>
 					<input type="hidden" name="currency" value="'.$currency_moneybookers.'"/>'; ?>
 					<input type="hidden" name="pay_to_email" value="<?php echo $moneybookers_email;?>" />
@@ -483,7 +532,9 @@ if ($donate_len == 1) {
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
       <input type="hidden" name="MrchLogin" value="<?php echo $mrh_login;?>" />
-      <input id="robox-pay-1" class="robox-pay-1" type="text" name="outsum" size="3" value="<?php echo $all_summout;?>" title="<?php echo JText::_('MOD_AMONEY_A_FIXIXED_AMOUNT'); ?>" readonly="readonly" />&nbsp;<span class="letter">WMR</span>
+	  <div class="input-prepend input-append"><span id="donate_wm" class="add-on">P</span>
+      <input id="robox-pay-1" class="robox-pay-1" type="number" name="outsum" size="16" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summout;?>" title="<?php echo JText::_('MOD_AMONEY_A_FIXIXED_AMOUNT'); ?>" readonly="readonly" /><span class="add-on">WMR</span>
+	  </div>
       <input type="hidden" name="InvId" value="<?php echo $inv_id;?>"  />
       <input type="hidden" name="Desc" value="<?php echo $wm_descpay1;?>" />
       <input type="hidden" name="SignatureValue" value="<?php echo $crc;?>" />
