@@ -238,14 +238,14 @@ jQuery(function($) {
     var currencyObj = document.getElementById( 'donate_wm' );
     if( currencyObj )
     {
-      var currencySymbols1 = { '<?php echo $wmnum1; ?>': 'P','<?php echo $wmnum2; ?>': '$', '<?php echo $wmnum3; ?>': '&euro;', '<?php echo $wmnum4; ?>': '&#8372;', '<?php echo $wmnum5; ?>': 'Br' };
+      var currencySymbols1 = { '<?php echo $wmnum1; ?>': '&#8381;','<?php echo $wmnum2; ?>': '$', '<?php echo $wmnum3; ?>': '&euro;', '<?php echo $wmnum4; ?>': '&#8372;', '<?php echo $wmnum5; ?>': 'Br' };
       var currencySymbol = currencySymbols1[ selection ];
       currencyObj.innerHTML = currencySymbol;
     }
   }
   </script>
   <?php
-$currencies1 = array( 'WMR' => 'P', 'WMZ' => '$', 'WME' => '&euro;', 'WMU' => '&#8372;', 'WMB' => 'Br' );
+$currencies1 = array( 'WMR' => '&#8381;', 'WMZ' => '$', 'WME' => '&euro;', 'WMU' => '&#8372;', 'WMB' => 'Br' );
 $symbol1 = $currencies1[ $wm_cur_val ];
   ?>
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_AMONEY_CURRENCY_SUM'); ?></span>
@@ -395,7 +395,7 @@ else if ($length == 2) {
 else if ($length == 3) {
   header("Location: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick-subscriptions&business=".$donate_email."&item_name=".$wm_descpay1."&item_number=".$random_chars1."&no_shipping=1&no_note=1&currency_code=".$currency_code."&bn=PP%2dSubscriptionsBF&charset=UTF%2d8&a3=".$amount."%2e00&p3=1&t3=Y&src=1&sra=1&return=".$link_return."&cancel=".$link_cancel);
 }
-$currencies = array( 'RUB' => 'P', 'CAD' => '$', 'USD' => '$', 'GBP' => '&pound;', 'AUD' => '$', 'JPY' => '&yen;', 'EUR' => '&euro;' );
+$currencies = array( 'RUB' => '&#8381;', 'CAD' => '$', 'USD' => '$', 'GBP' => '&pound;', 'AUD' => '$', 'JPY' => '&yen;', 'EUR' => '&euro;' );
 echo "<div class=\"cont1\" style=\"text-align: center;\">";
 echo "<div id=\"ammh19\" class=\"ctynh15\" style=\"text-align:center;\"></div>";
 echo "</div>";
@@ -411,7 +411,7 @@ if ($paypalval_on == 1) {
     var currencyObj = document.getElementById( 'donate_symbol_currency' );
     if( currencyObj )
     {
-      var currencySymbols = { 'RUB': 'P','CAD': '$', 'USD': '$', 'GBP': '&pound;', 'AUD': '$', 'JPY': '&yen;', 'EUR': '&euro;' };
+      var currencySymbols = { 'RUB': '&#8381;','CAD': '$', 'USD': '$', 'GBP': '&pound;', 'AUD': '$', 'JPY': '&yen;', 'EUR': '&euro;' };
       var currencySymbol = currencySymbols[ selection ];
       currencyObj.innerHTML = currencySymbol;
     }
@@ -532,7 +532,7 @@ if ($donate_len == 1) {
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
       <input type="hidden" name="MrchLogin" value="<?php echo $mrh_login;?>" />
-	  <div class="input-prepend input-append"><span id="donate_wm" class="add-on">P</span>
+	  <div class="input-prepend input-append"><span id="donate_wm" class="add-on">&#8381;</span>
       <input id="robox-pay-1" class="robox-pay-1" type="number" name="outsum" size="16" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summout;?>" title="<?php echo JText::_('MOD_AMONEY_A_FIXIXED_AMOUNT'); ?>" readonly="readonly" /><span class="add-on">WMR</span>
 	  </div>
       <input type="hidden" name="InvId" value="<?php echo $inv_id;?>"  />
@@ -667,7 +667,7 @@ win.document.write('<div class="smallf center" style="top: 100px; left: 7px; wid
 win.document.write('<div class="field" style="top: 114px; left: 7px; width: 500px; height:14px; overflow:hidden;">&nbsp;</div>')
 win.document.write('<div class="smallf center" style="top: 130px; left: 7px; width: 500px;">&#1060;&#1048;&#1054; &#1087;&#1083;&#1072;&#1090;&#1077;&#1083;&#1100;&#1073;&#1080;&#1082;&#1072;</div>')
 win.document.write('<div class="field" style="top: 144px; left: 7px; width: 500px;">&nbsp;</div>')
-win.document.write('<div class="smallf center" style="top: 160px; left: 7px; width: 500px;">Адрес плательщика</div>')
+win.document.write('<div class="smallf center" style="top: 160px; left: 7px; width: 500px;">&#1040;&#1076;&#1088;&#1077;&#1089; &#1087;&#1083;&#1072;&#1090;&#1077;&#1083;&#1100;&#1073;&#1080;&#1082;&#1072;</div>')
 win.document.write('<div class="field" style="top: 174px; left: 7px; width: 500px;"><?php echo $cbank_blago; ?>, &#1041;&#1077;&#1079; &#1053;&#1044;&#1057;</div>')
 win.document.write('<div class="smallf center" style="top: 190px; left: 7px; width: 500px;">&#1053;&#1072;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1080;&#1077; &#1087;&#1083;&#1072;&#1090;&#1077;&#1078;&#1072;</div>')
 win.document.write('<div style="top: 204px; left: 7px; width: 76px;">&#1057;&#1091;&#1084;&#1084;&#1072;</div>')
