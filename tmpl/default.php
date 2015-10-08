@@ -10,102 +10,21 @@
 
 // no direct access
 defined('_JEXEC') or die;
-
 ?>
+
 <script type="text/javascript">
 /* <![CDATA[ */
 (function($) {
-	<?php 
-	if ($use_wm)
-	{?>
-	this.show_wm = function()
+<?php	foreach ($ammjavascript as $aammitem) {
+?>
+ this.<?= $aammitem['Stat'] ?> = function()
 	{
-		$('<?php echo $payments['wm']; ?>').hide();
-		$('#wm').<?php echo $jfadtogquery;?>;
+		$('<?= $aammitem['List'] ?>').hide();
+		$('<?= $aammitem['ID'] ?>').<?php echo $jfadtogquery;?>;
 		return false;
-	};
-	<?php
 	}
-	if ($use_rupay)
-	{?>
-	this.show_rupay = function()
-	{
-		$('<?php echo $payments['rupay']; ?>').hide();
-		$('#rupay').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_yandex)
-	{?>
-	this.show_yandex = function()
-	{
-		$('<?php echo $payments['yandex']; ?>').hide();
-		$('#yandex').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_paypal)
-	{?>
-	this.show_paypal = function()
-	{
-		$('<?php echo $payments['paypal']; ?>').hide();
-		$('#paypal').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_moneybookers)
-	{?>
-	this.show_moneybookers = function()
-	{
-		$('<?php echo $payments['moneybookers']; ?>').hide();
-		$('#moneybookers').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_robox)
-	{?>
-	this.show_robox = function()
-	{
-		$('<?php echo $payments['robox']; ?>').hide();
-		$('#robox').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_liqpay)
-	{?>
-	this.show_liqpay = function()
-	{
-		$('<?php echo $payments['liqpay']; ?>').hide();
-		$('#liqpay').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_smscoin)
-	{?>
-	this.show_smscoin = function()
-	{
-		$('<?php echo $payments['smscoin']; ?>').hide();
-		$('#smscoin').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}
-	if ($use_cbank)
-	{?>
-	this.show_cbank = function()
-	{
-		$('<?php echo $payments['cbank']; ?>').hide();
-		$('#cbank').<?php echo $jfadtogquery;?>;
-		return false;
-	};
-	<?php
-	}?>
+<?php
+}?>
 	this.hide_all = function()
 	{
 		$('<?php echo $payments['hideall']; ?>').hide();
