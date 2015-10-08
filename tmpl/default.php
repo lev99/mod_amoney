@@ -76,6 +76,9 @@ jQuery(function($) {
 				</div>
 					<?php echo $off_intrerst; ?>
 				<div class="cont1" style="text-align: center;">
+<?php
+if ($wm_val_on == 1) {
+	?>
 <script type="text/javascript">
   function donateChangeCurrency1( )
   {
@@ -84,15 +87,18 @@ jQuery(function($) {
     var currencyObj = document.getElementById( 'donate_wm' );
     if( currencyObj )
     {
-      var currencySymbols1 = { '<?php echo $wmnum1; ?>': '&#8381;','<?php echo $wmnum2; ?>': '$', '<?php echo $wmnum3; ?>': '&euro;', '<?php echo $wmnum4; ?>': '&#8372;', '<?php echo $wmnum5; ?>': 'Br' };
+      var currencySymbols1 = { <?php if ($use_p1) { ?>'<?php echo $wmnum1; ?>': '&#8381;',<?php } ?><?php if ($use_p2) { ?>'<?php echo $wmnum2; ?>': '$',<?php } ?><?php if ($use_p3) { ?>'<?php echo $wmnum3; ?>': '&euro;',<?php } ?><?php if ($use_p4) { ?>'<?php echo $wmnum4; ?>': '&#8372;',<?php } ?><?php if ($use_p5) { ?>'<?php echo $wmnum5; ?>': 'Br'<?php } ?> };
       var currencySymbol = currencySymbols1[ selection ];
       currencyObj.innerHTML = currencySymbol;
     }
   }
-  </script>
-  <?php
+</script>
+<?php
+ }
 $currencies1 = array( 'WMR' => '&#8381;', 'WMZ' => '$', 'WME' => '&euro;', 'WMU' => '&#8372;', 'WMB' => 'Br' );
+$currencies2 = array( 'WMR' => $wmnum1, 'WMZ' => $wmnum2, 'WME' => $wmnum3, 'WMU' => $wmnum4, 'WMB' => $wmnum5 );
 $symbol1 = $currencies1[ $wm_cur_val ];
+$symbol2 = $currencies2[ $wm_cur_val ];
   ?>
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_AMONEY_CURRENCY_SUM'); ?></span>
 				</div>
@@ -118,15 +124,21 @@ if ($use_p5) {
   $areas["$wmnum5"] = $wmtype5;
 }
 
+if ($wm_val_on == 1) { 
 print( "<span class=\"focus-example\"><select id=\"wm-pay-2\" class=\"wm-pay-2\" name=\"LMI_PAYEE_PURSE\" title=\"".JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY')."\" style=\"min-width:30px;\" onchange=\"donateChangeCurrency1();\">
 <optgroup label=\"". JText::_('MOD_AMONEY_AMONEY_CHOICE')."\">" );
+
 foreach( $areas as $currency1 => $dummy1 )
-  {
-    $selected1 = ( $dummy1 == $wm_cur_val ) ? " selected=\"selected\"" : "";
+	{
+	$selected1 = ( $dummy1 == $wm_cur_val ) ? " selected=\"selected\"" : "";
 print( "<option value=\"$currency1\"$selected1>$dummy1</option>\n" );
-  }
+	}
 print( "</optgroup></select></span>\n" );
-  ?>
+	}
+if ($wm_val_on == 0) {
+  echo "<input type=\"hidden\" name=\"LMI_PAYEE_PURSE\" value=\"".$symbol2."\" />";
+	}
+?>
 
 					<input type="hidden" name="LMI_PAYMENT_DESC" value="<?php echo $wm_descpay1;?>" />
 					<input type="hidden" name="LMI_PAYMENT_NO" value="<?php echo $random_chars1; ?>" />
