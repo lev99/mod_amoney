@@ -112,7 +112,6 @@ if ($params->get('amofixed')==1) {
 $amofixed='readonly="readonly"'; }
 else { $amofixed=""; };
 ////////////////////////////////
-$min_summallin = $params->get('min_summallin', '0');
 $max_summallin = $params->get('max_summallin', '100');
 $step_summallin = $params->get('step_summallin','0.01');
 // Webmoney
@@ -193,6 +192,7 @@ $yandex = $params->get('yandex','00000000000000');
 $yandex_summ = $params->get('yandex_summ','10');
 $yandex_summ_mm = $yandex_summ + ($yandex_summ/100 * 0.5);
 $yandex_summ_mm_mm = number_format($yandex_summ_mm, 2);
+$max_summallinyandex = $params->get('max_summallinyandex','100');
 if ($params->get('off_znahsum')==1) {
 $document = JFactory::getDocument();
 $buffer=$document->getBuffer(component);
@@ -244,24 +244,24 @@ $moneybookers_url_adds = "https://www.moneybookers.com/app/payment.pl";
 $moneybookers_successurl = $params->get('moneybookers_successurl', JURI::base( true ));
 $country1	= $params->def( 'country1', 'US' );
 $curr1 = array();
-$curr1[] = array('code'=>'USD', 'title'=>'USD - $');
-$curr1[] = array('code'=>'AUD', 'title'=>'AUD - $');
-$curr1[] = array('code'=>'GBP', 'title'=>'GBP - &pound;');
-$curr1[] = array('code'=>'CAD', 'title'=>'CAD - $');
-$curr1[] = array('code'=>'CZK', 'title'=>'CZK - K&#269;');
-$curr1[] = array('code'=>'DKK', 'title'=>'DKK - kr');
-$curr1[] = array('code'=>'EUR', 'title'=>'EUR - &euro;');
-$curr1[] = array('code'=>'HKD', 'title'=>'HKD - HK$');
-$curr1[] = array('code'=>'HUF', 'title'=>'HUF - Ft');
-$curr1[] = array('code'=>'ILS', 'title'=>'ILS - &#8362;');
-$curr1[] = array('code'=>'JPY', 'title'=>'JPY - &yen;');
-$curr1[] = array('code'=>'MXN', 'title'=>'MXN - $');
-$curr1[] = array('code'=>'NZD', 'title'=>'NZD - NZ$');
-$curr1[] = array('code'=>'NOK', 'title'=>'NOK - kr');
-$curr1[] = array('code'=>'PLN', 'title'=>'PLN - z&#322;');
-$curr1[] = array('code'=>'SGD', 'title'=>'SGD - S$');
-$curr1[] = array('code'=>'SEK', 'title'=>'SEK - kr');
-$curr1[] = array('code'=>'CHF', 'title'=>'CHF');
+$curr1[] = array('code'=>'USD', 'title'=>'USD' );
+$curr1[] = array('code'=>'AUD', 'title'=>'AUD' );
+$curr1[] = array('code'=>'GBP', 'title'=>'GBP' );
+$curr1[] = array('code'=>'CAD', 'title'=>'CAD' );
+$curr1[] = array('code'=>'CZK', 'title'=>'CZK' );
+$curr1[] = array('code'=>'DKK', 'title'=>'DKK' );
+$curr1[] = array('code'=>'EUR', 'title'=>'EUR' );
+$curr1[] = array('code'=>'HKD', 'title'=>'HKD' );
+$curr1[] = array('code'=>'HUF', 'title'=>'HUF' );
+$curr1[] = array('code'=>'ILS', 'title'=>'ILS' );
+$curr1[] = array('code'=>'JPY', 'title'=>'JPY' );
+$curr1[] = array('code'=>'MXN', 'title'=>'MXN' );
+$curr1[] = array('code'=>'NZD', 'title'=>'NZD' );
+$curr1[] = array('code'=>'NOK', 'title'=>'NOK' );
+$curr1[] = array('code'=>'PLN', 'title'=>'PLN' );
+$curr1[] = array('code'=>'SGD', 'title'=>'SGD' );
+$curr1[] = array('code'=>'SEK', 'title'=>'SEK' );
+$curr1[] = array('code'=>'CHF', 'title'=>'CHF' );
 // Robox
 $use_robox = $params->get('use_robox', 0);
 $mrh_login = $params->get('mrh_login','demo');
@@ -325,7 +325,7 @@ $switch_fixed = '<div class="cont1" style="text-align: center;">';
 $switch_fixed .= '<span class="letter">'.JText::_('MOD_AMONEY_FIXED_AMOUNT').'</span>';
 $switch_fixed .= '</div>';
 $switch_fixed .= '<div class="focus-example cont1" style="text-align: center;">
-<div class="input-append"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" min="'.$min_summallin.'" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" readonly="readonly" /><span class="add-on">'.$liq1_currency.'&nbsp;-&nbsp;'.$liq1_currenc1.'</span></div>
+<div class="input-append"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" min="0" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" readonly="readonly" /><span class="add-on">'.$liq1_currency.'&nbsp;-&nbsp;'.$liq1_currenc1.'</span></div>
 <input type="hidden" name="operation_xml" value="'.$operation_xml.'"/>
 <input type="hidden" name="signature" value="'.$signature.'"/>
 </div>';
@@ -336,7 +336,7 @@ $switch_fixed .= '</div>';
 $switch_fixed .= '<div class="cont1" style="text-align: center;">';
 $switch_fixed .= '<input type="hidden" name="version" value="1.2"/>';
 $switch_fixed .= '<input type="hidden" name="merchant_id" value="'.$merchant_id.'"/>';
-$switch_fixed .= '<span class="focus-example1"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" name="amount" min="'.$min_summallin.'" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></span>&nbsp;';
+$switch_fixed .= '<span class="focus-example1"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" name="amount" min="0" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></span>&nbsp;';
 $switch_fixed .= '<span class="focus-example">';
 $switch_fixed .= '<select id="liqpay-pay-2" class="liqpay-pay-2" name="currency" title="'.JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY').'" style="min-width:30px;">';
 $switch_fixed .= '<optgroup label="'.JText::_('MOD_AMONEY_AMONEY_CHOICE').'">';
@@ -406,103 +406,6 @@ $wmtype5 = 'WMB';
 $wmnum5 = $wmb;
 }
 //////////////////////////////////////////////////////////////////////////////////
-$use_wm1 = $params->get( 'use_wm' ) == 0 ? '' : ' #wm,';
-$use_rupay1 = $params->get( 'use_rupay' ) == 0 ? '' : '  #rupay,';
-$use_yandex1 = $params->get( 'use_yandex' ) == 0 ? '' : ' #yandex,';
-$use_paypal1 = $params->get( 'use_paypal' ) == 0 ? '' : ' #paypal,';
-$use_moneybookers1 = $params->get( 'use_moneybookers' ) == 0 ? '' : '#moneybookers,';
-$use_robox1 = $params->get( 'use_robox' ) == 0 ? '' : ' #robox,';
-$use_liqpay1 = $params->get( 'use_liqpay' ) == 0 ? '' : ' #liqpay,';
-$use_smscoin1 = $params->get( 'use_smscoin' ) == 0 ? '' : ' #smscoin,';
-$use_cbank1 = $params->get( 'use_cbank' ) == 0 ? '' : ' #cbank,';
-
-
-$payments = array(
-   'wm' => trim( rtrim( "$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'rupay' => trim( rtrim( "$use_wm1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'yandex' => trim( rtrim( "$use_wm1$use_rupay1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'paypal' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'moneybookers' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'robox' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'liqpay' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_smscoin1$use_cbank1", "," ), ' ' ),
-   'smscoin' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_cbank1", "," ), ' ' ),
-   'cbank' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1", "," ), ' ' ),
-   'hideall' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' )
-);
-
-	$ammjavascript = array();
-		if ($use_wm)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_wm',
-				"List" => $payments['wm'],
-				"ID" => '#wm',
-			);
-		}
-			if ($use_rupay)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_rupay',
-				"List" => $payments['rupay'],
-				"ID" => '#rupay',
-			);
-		}
-		if ($use_yandex)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_yandex',
-				"List" => $payments['yandex'],
-				"ID" => '#yandex',
-			);
-		}
-		if ($use_paypal)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_paypal',
-				"List" => $payments['paypal'],
-				"ID" => '#paypal',
-			);
-		}
-		if ($use_moneybookers)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_moneybookers',
-				"List" => $payments['robox'],
-				"ID" => '#moneybookers',
-			);
-		}
-		if ($use_robox)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_robox',
-				"List" => $payments['robox'],
-				"ID" => '#robox',
-			);
-		}
-		if ($use_liqpay)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_liqpay',
-				"List" => $payments['liqpay'],
-				"ID" => '#liqpay',
-			);
-		}
-		if ($use_smscoin)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_smscoin',
-				"List" => $payments['smscoin'],
-				"ID" => '#smscoin',
-			);
-		} 
-		if ($use_cbank)
-		{
-			$ammjavascript[] = array(
-				"Stat" => 'show_cbank',
-				"List" => $payments['cbank'],
-				"ID" => '#cbank',
-			);
-		} 
 		
 	$ammhamoney = array();
 		if ($use_wm)
