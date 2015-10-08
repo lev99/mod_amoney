@@ -93,8 +93,6 @@
 	<field name="btntxt" type="text" default="&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100;"
 			label="MOD_AMONEY_TEXT_SEND_BUTTON" description=""  />
 	<field type="spacer" name="myspacer4" hr="true" />
-	<field name="min_summallin" type="text" size="5" default="0" 
-			label="MOD_AMONEY_TOTAL_DONATIONS_MINALL" description="MOD_AMONEY_TOTAL_DONATIONS_MINALL_DESCRIPTION" />
 	<field name="max_summallin" type="text" size="5" default="100" 
 			label="MOD_AMONEY_TOTAL_DONATIONS_MAXALL" description="MOD_AMONEY_TOTAL_DONATIONS_MAXALL_DESCRIPTION" />
 	<field name="step_summallin" type="text" size="5" default="0.01" 
@@ -177,6 +175,8 @@
 			label="MOD_AMONEY_TOTAL_DONATIONS" description="MOD_AMONEY_TOTALDONATIONSDEFAULT" />
 	<field name="yandex_successurl" type="text" size="40" default="http://www.yoursite.com" 
 			label="MOD_AMONEY_LINK_TO_WEB_SITE" description="MOD_AMONEY_INDICATEWEBSITEADDRESS" />
+	<field name="max_summallinyandex" type="text" size="5" default="100" 
+			label="MOD_AMONEY_TOTAL_DONATIONS_MAXALL" description="MOD_AMONEY_TOTAL_DONATIONS_MAXALL_DESCRIPTION" />
     <field type="spacer" name="myspacer8" hr="true" />			
 	<field name="use_paypal" type="radio" class="btn-group btn-yesno" default="0" label="MOD_AMONEY_USING_PAYPAL" description="">
 			<option value="1">JYes</option>
