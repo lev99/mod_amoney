@@ -15,21 +15,507 @@ defined('_JEXEC') or die;
 <script type="text/javascript">
 /* <![CDATA[ */
 (function($) {
-<?php	foreach ($ammjavascript as $aammitem) {
-?>
- this.<?= $aammitem['Stat'] ?> = function()
+	<?php
+	if ($use_wm)
+	{?>
+this.show_wm = function()
 	{
-		$('<?= $aammitem['List'] ?>').hide();
-		$('<?= $aammitem['ID'] ?>').<?php echo $jfadtogquery;?>;
+	<?php
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#wm').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+this.show_rupay = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#rupay').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+this.show_yandex = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#yandex').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+this.show_paypal = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#paypal').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+this.show_moneybookers = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#moneybookers').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_robox)
+	{?>
+this.show_robox = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#robox').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+this.show_liqpay = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#liqpay').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+this.show_smscoin = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
+		$('#smscoin').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+this.show_cbank = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide();
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}?>
+		$('#cbank').<?php echo $jfadtogquery;?>;
+		return false;
+	};
+	<?php
+	}?>
+this.hide_all = function()
+	{
+	<?php
+	if ($use_wm)
+	{?>
+		$('#wm').hide();
+	<?php
+	}
+	if ($use_rupay)
+	{?>
+		$('#rupay').hide()
+	<?php
+	}
+	if ($use_yandex)
+	{?>
+		$('#yandex').hide();
+	<?php
+	}
+	if ($use_paypal)
+	{?>
+		$('#paypal').hide();
+	<?php
+	}
+	if ($use_moneybookers)
+	{?>
+		$('#moneybookers').hide();
+	<?php
+	}
+	if ($use_robox)
+	{?>
+		$('#robox').hide();
+	<?php
+	}
+	if ($use_liqpay)
+	{?>
+		$('#liqpay').hide();
+	<?php
+	}
+	if ($use_smscoin)
+	{?>
+		$('#smscoin').hide();
+	<?php
+	}
+	if ($use_cbank)
+	{?>
+		$('#cbank').hide();
+	<?php
+	}?>
 		return false;
 	}
-<?php
-}?>
-	this.hide_all = function()
-	{
-		$('<?php echo $payments['hideall']; ?>').hide();
-		return false;
-	}    
 })(jQuery);	
 <?php 
 	if ($jammfadtogquery1 == 1)
@@ -59,7 +545,7 @@ jQuery(function($) {
 	}
 	foreach ($ammhamoney as $item) {
 ?>
-     <a id="<?= $item['ID'] ?>" style="margin:3px;" class="south" title="<?php echo JText::_($item['title']); ?>" onclick="<?= $item['foo'] ?>()"></a>
+     <a id="<?php echo $item['ID']; ?>" style="margin:3px;" class="south" title="<?php echo JText::_($item['title']); ?>" onclick="<?php echo $item['foo']; ?>()"></a>
 <?php
 }?>
 	<!-- Link Edit -->
@@ -105,7 +591,7 @@ $symbol2 = $currencies2[ $wm_cur_val ];
 				<div class="cont1" style="text-align: center;">
 <div class="input-prepend"><span class="focus-example1">
 <span id="donate_wm" class="add-on"><?php echo $symbol1; ?></span>
-					<input id="wm-pay-1" class="wm-pay-1" type="number" name="LMI_PAYMENT_AMOUNT" size="3" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summwm;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
+					<input id="wm-pay-1" class="wm-pay-1" type="number" name="LMI_PAYMENT_AMOUNT" size="3" min="0" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summwm;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
 </span></div>
 <?php
 if ($use_p1) {
@@ -172,7 +658,7 @@ if ($wm_val_on == 0) {
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
 				<div class="input-append">
-						<input id="rupay-pay-1" class="rupay-pay-1" type="number" name="recipientAmount" size="3" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summrupay;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> /><span class="add-on"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL'); ?></span>
+						<input id="rupay-pay-1" class="rupay-pay-1" type="number" name="recipientAmount" size="3" min="0" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summrupay;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> /><span class="add-on"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL'); ?></span>
 						</div>
 						<input type="hidden" name="eshopId" value="<?php echo $rupay_submit;?>" />
 						<input type="hidden" name="orderId" value="<?php echo $random_chars1; ?>" />
@@ -206,7 +692,7 @@ if ($wm_val_on == 0) {
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
 				<div class="input-append">
-					<input id="yandex-pay-1" class="yandex-pay-1" type="number" name="CompanySum" size="20" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summyandex;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> /><span class="add-on"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL');?></span></div>
+					<input id="yandex-pay-1" class="yandex-pay-1" type="number" name="CompanySum" size="3" min="0" max="<?php echo $max_summallinyandex;?>" step="0.01" value="<?php echo $all_summyandex;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> /><span class="add-on"><?php echo JText::_('MOD_AMONEY_AMONEY_RBL');?></span></div>
 					<input type="hidden" name="to" value="<?php echo $yandex;?>" />
 					<input type="hidden" name="CompanyName" value="<?php echo $wm_descpay1;?>" />
 					<input type="hidden" name="CompanyLink" value="<?php echo $yandex_successurl;?>" />
@@ -281,7 +767,7 @@ JAVASCRIPT;
 </div>
 <div class=\"input-prepend\"><span class=\"focus-example1\">
 <span id=\"donate_symbol_currency\" class=\"add-on\">".$symbol."</span>
-<input id=\"paypal-pay-1\" class=\"paypal-pay-1\" type=\"number\" min=\"".$min_summallin."\" max=\"".$max_summallin."\" step=\"".$step_summallin."\" value=\"".$all_summpaypal."\" name=\"paypalamount\" size=\"3\" title=\"".JText::_('MOD_AMONEY_ENTER_AMOUNT')."\" $amofixed /></span></div>&nbsp;";
+<input id=\"paypal-pay-1\" class=\"paypal-pay-1\" type=\"number\" min=\"0\" max=\"".$max_summallin."\" step=\"".$step_summallin."\" value=\"".$all_summpaypal."\" name=\"paypalamount\" size=\"3\" title=\"".JText::_('MOD_AMONEY_ENTER_AMOUNT')."\" $amofixed /></span></div>&nbsp;";
 }
 elseif ($paypalval_on == 0) {
   echo "<input type=\"hidden\" value=\"".$all_summpaypal."\" name=\"paypalamount\" />";
@@ -333,21 +819,44 @@ if ($donate_len == 1) {
 	{?>
 <!-- MoneyBookers -->
 <div id="moneybookers" class="amoney" style="width:<?php echo $width_border; ?>%;height:<?php echo $height_border; ?>;text-align: center;">
+<?php 
+$currencies3 = array( 'USD' => '$', 'AUD' => '$', 'GBP' => '&pound;', 'CAD' => '$', 'CZK' => 'K&#269;', 'CZK' => 'K&#269;', 'DKK' => 'kr', 'EUR' => '&euro;', 'HKD' => 'HK$', 'HUF' => 'Ft', 'ILS' => '&#8362;', 'JPY' => '&yen;', 'MXN' => '$', 'NZD' => 'NZ$', 'NOK' => 'kr', 'PLN' => 'z&#322;', 'SGD' => 'S$', 'SEK' => 'kr', 'CHF' => 'Fr' );
+$symbol3 = $currencies3[ $currency_moneybookers ];
+?>
 	<form id="moneybookers-pay" name="moneybookers" method="post" action="<?php echo $moneybookers_url_adds; ?>" target="_blank">
 				<div class="cont1" style="text-align: center;">
 					<div id="ammh21" class="ctynh15" style="text-align: center;"></div>
 				</div>
 					<?php echo $off_intrerst; ?>
 				<div class="cont1" style="text-align: center;">
+<?php 
+if ($choose_cur1) { ?>
+<script type="text/javascript">
+  function donateChangeCurrency2( )
+  {
+    var selectionObj = document.getElementById( 'moneybookers-pay-2' );
+    var selection = selectionObj.value;
+    var currencyObj = document.getElementById( 'donate_moneybookers' );
+    if( currencyObj )
+    {
+      var currencySymbols2 = { 'USD': '$', 'AUD': '$', 'GBP': '&pound;',  'CAD': '$', 'CZK': 'K&#269;', 'CZK': 'K&#269;', 'DKK': 'kr', 'EUR': '&euro;', 'HKD': 'HK$', 'HUF': 'Ft', 'ILS': '&#8362;', 'JPY': '&yen;', 'MXN': '$', 'NZD': 'NZ$', 'NOK': 'kr', 'PLN': 'z&#322;', 'SGD': 'S$', 'SEK': 'kr', 'CHF': 'Fr' };
+      var currencySymbol = currencySymbols2[ selection ];
+      currencyObj.innerHTML = currencySymbol;
+    }
+  }
+</script>
+<?php 
+	} 
+?>
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT1');?></span>
 				</div>
 				<div class="cont1" style="text-align: center;">
 <?php if ($choose_cur1) { ?>
-<span class="focus-example1">
-			<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="number" name="amount" size="3" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summmoneybookers;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
-</span>
+<div class="input-prepend"><span class="focus-example1"><span id="donate_moneybookers" class="add-on"><?php echo $symbol3; ?></span>
+			<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="number" name="amount" size="3" min="0" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summmoneybookers;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
+</span></div>
 <span class="focus-example">
-			<select id="moneybookers-pay-2" class="moneybookers-pay-2" name="currency" title="<?php echo JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY'); ?>" style="min-width:30px;">
+			<select id="moneybookers-pay-2" class="moneybookers-pay-2" name="currency" title="<?php echo JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY'); ?>" style="min-width:30px;" onchange="donateChangeCurrency2();">
 			<optgroup label="<?php echo JText::_('MOD_AMONEY_AMONEY_CHOICE'); ?>">
 			<?php foreach ($curr1 as $cur_code1) {
 				$selected1 = ($cur_code1['code'] == $currency_moneybookers)?' selected="selected"':'';
@@ -356,8 +865,8 @@ if ($donate_len == 1) {
 			?>
 			</optgroup>
 			</select></span>
-<?php } else echo '<div class="input-prepend"><span class="focus-example"><span class="add-on">'.$currency_moneybookers.'</span>
-					<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="number" name="amount" size="3" min="'.$min_summallin.'" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summmoneybookers.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></div>
+<?php } else echo '<div class="input-prepend input-append"><span class="focus-example"><span class="add-on">'.$symbol3.'</span>
+					<input id="moneybookers-pay-1" class="moneybookers-pay-1" type="number" name="amount" size="3" min="0" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summmoneybookers.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /><span class="add-on">'.$currency_moneybookers.'</span></div>
 </span>
 					<input type="hidden" name="currency" value="'.$currency_moneybookers.'"/>'; ?>
 					<input type="hidden" name="pay_to_email" value="<?php echo $moneybookers_email;?>" />
@@ -391,7 +900,7 @@ if ($donate_len == 1) {
 				<div class="focus-example cont1" style="text-align: center;">
       <input type="hidden" name="MrchLogin" value="<?php echo $mrh_login;?>" />
 	  <div class="input-prepend input-append"><span id="donate_wm" class="add-on">&#8381;</span>
-      <input id="robox-pay-1" class="robox-pay-1" type="number" name="outsum" size="16" min="<?php echo $min_summallin;?>" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summout;?>" title="<?php echo JText::_('MOD_AMONEY_A_FIXIXED_AMOUNT'); ?>" readonly="readonly" /><span class="add-on">WMR</span>
+      <input id="robox-pay-1" class="robox-pay-1" type="number" name="outsum" size="16" min="0" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summout;?>" title="<?php echo JText::_('MOD_AMONEY_A_FIXIXED_AMOUNT'); ?>" readonly="readonly" /><span class="add-on">WMR</span>
 	  </div>
       <input type="hidden" name="InvId" value="<?php echo $inv_id;?>"  />
       <input type="hidden" name="Desc" value="<?php echo $wm_descpay1;?>" />
