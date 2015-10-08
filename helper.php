@@ -502,6 +502,80 @@ $payments = array(
 				"ID" => '#cbank',
 			);
 		} 
+		
+	$ammhamoney = array();
+		if ($use_wm)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh1',
+				"title" => 'MOD_AMONEY_WEBMONEY',
+				"foo" => 'show_wm',
+			);
+		}
+		if ($use_rupay)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh2',
+				"title" => 'MOD_AMONEY_RBKMONEY',
+				"foo" => 'show_rupay',
+			);
+		}
+		if ($use_yandex)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh3',
+				"title" => 'MOD_AMONEY_YANDEX',
+				"foo" => 'show_yandex',
+			);
+		}
+		if ($use_paypal)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh5',
+				"title" => 'MOD_AMONEY_PAYPAL',
+				"foo" => 'show_paypal',
+			);
+		}
+		if ($use_moneybookers)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh7',
+				"title" => 'MOD_AMONEY_MONBOOK',
+				"foo" => 'show_moneybookers',
+			);
+		}
+		if ($use_robox)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh8',
+				"title" => 'MOD_AMONEY_ROBOKASSA',
+				"foo" => 'show_robox',
+			);
+		}
+		if ($use_liqpay)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh12',
+				"title" => 'MOD_AMONEY_LIQPAY',
+				"foo" => 'show_liqpay',
+			);
+		}
+		if ($use_smscoin)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh13',
+				"title" => 'MOD_AMONEY_SMSCOIN',
+				"foo" => 'show_smscoin',
+			);
+		} 
+		if ($use_cbank)
+		{
+			$ammhamoney[] = array(
+				"ID" => 'ammh14',
+				"title" => 'MOD_AMONEY_CBERBANK',
+				"foo" => 'show_cbank',
+			);
+		} 
 
 // Output content with template
 echo $mod_copyrights_start;
