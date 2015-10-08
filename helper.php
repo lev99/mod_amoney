@@ -429,6 +429,80 @@ $payments = array(
    'hideall' => trim( rtrim( "$use_wm1$use_rupay1$use_yandex1$use_paypal1$use_moneybookers1$use_robox1$use_liqpay1$use_smscoin1$use_cbank1", "," ), ' ' )
 );
 
+	$ammjavascript = array();
+		if ($use_wm)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_wm',
+				"List" => $payments['wm'],
+				"ID" => '#wm',
+			);
+		}
+			if ($use_rupay)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_rupay',
+				"List" => $payments['rupay'],
+				"ID" => '#rupay',
+			);
+		}
+		if ($use_yandex)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_yandex',
+				"List" => $payments['yandex'],
+				"ID" => '#yandex',
+			);
+		}
+		if ($use_paypal)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_paypal',
+				"List" => $payments['paypal'],
+				"ID" => '#paypal',
+			);
+		}
+		if ($use_moneybookers)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_moneybookers',
+				"List" => $payments['robox'],
+				"ID" => '#moneybookers',
+			);
+		}
+		if ($use_robox)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_robox',
+				"List" => $payments['robox'],
+				"ID" => '#robox',
+			);
+		}
+		if ($use_liqpay)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_liqpay',
+				"List" => $payments['liqpay'],
+				"ID" => '#liqpay',
+			);
+		}
+		if ($use_smscoin)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_smscoin',
+				"List" => $payments['smscoin'],
+				"ID" => '#smscoin',
+			);
+		} 
+		if ($use_cbank)
+		{
+			$ammjavascript[] = array(
+				"Stat" => 'show_cbank',
+				"List" => $payments['cbank'],
+				"ID" => '#cbank',
+			);
+		} 
+
 // Output content with template
 echo $mod_copyrights_start;
 require JModuleHelper::getLayoutPath($mod_name,$params->get('layout', 'default'));
