@@ -128,6 +128,7 @@ $wmu = $params->get('wmu','U000000000000');
 $use_p5 = $params->get('use_p5', 1);
 $wmb = $params->get('wmb','B000000000000');
 $wm_summ = $params->get('wm_summ', '10');
+$wm_val_on = $params->get('wm_val_on', '0');
 $wm_cur_val = $params->get('wm_cur_val');
 if ($params->get('off_znahsum')==1) {
 $document = JFactory::getDocument();
