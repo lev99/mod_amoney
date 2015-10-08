@@ -187,16 +187,28 @@ width:90px;
 height:39px;
 }
 
-.wm-pay-1,.rupay-pay-1,.yandex-pay-1,.paypal-pay-1,.moneybookers-pay-1,.robox-pay-1,.liqpay-pay-1 {
+.wm-pay-1,.paypal-pay-1,.rupay-pay-1,.moneybookers-pay-1,.robox-pay-1,.liqpay-pay-1 {
 margin-left:auto;
 margin-right:auto;
 width:40px;
 }
 
-.moneybookers-pay-2,.paypal-pay-3,.liqpay-pay-2,.wm-pay-2 {
+.yandex-pay-1  {
+margin-left:auto;
+margin-right:auto;
+width:56px;
+}
+
+.moneybookers-pay-2,.paypal-pay-3,.liqpay-pay-2 {
 margin-left:auto;
 margin-right:auto;
 width:70px;
+}
+
+.wm-pay-2 {
+margin-left:auto;
+margin-right:auto;
+width:75px;
 }
 
 .paypal-pay-2 {
