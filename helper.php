@@ -25,7 +25,8 @@ defined('_JEXEC') or die;
 // Global
 $mainframe = JFactory::getApplication();
 // Link Site
-$mosConfig_live_site = JURI::base( true ); 
+$linkjuribase = $params->get('linkjuribase', 'true');
+$mosConfig_live_site = JURI::base( $linkjuribase );
 
 //css
 $document = JFactory::getDocument();
@@ -44,6 +45,7 @@ if(!in_array($x, $amonykeys)) {
 $amonykeys[] = $x;
 }
 }
+$random_chars1 = '';
 foreach($amonykeys as $amonykey){
 $random_chars1 .= $characters[$amonykey];
 }
