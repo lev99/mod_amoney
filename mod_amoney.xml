@@ -56,7 +56,11 @@
 		<option value="1">JYes</option>
 		<option value="0">JNo</option>
 	</field>
-		<field name="off_tipsy1" type="radio" class="btn-group btn-yesno" default="1" label="MOD_AMONEY_YOU_DOWNLOAD_TIPSY" description="">
+	<field name="linkjuribase" type="radio" class="btn-group btn-yesno" default="true" label="Joomla site URI" description="">
+		<option value="true">true</option>
+		<option value="false">false</option>
+	</field>
+	<field name="off_tipsy1" type="radio" class="btn-group btn-yesno" default="1" label="MOD_AMONEY_YOU_DOWNLOAD_TIPSY" description="">
 		<option value="0">JYes</option>
 		<option value="1">JNo</option>
 	</field>
