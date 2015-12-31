@@ -570,7 +570,7 @@ if ($wm_val_on == 1) {
   {
     var selectionObj = document.getElementById( 'wm-pay-2' );
     var selection = selectionObj.value;
-    var currencyObj = document.getElementById( 'donate_wm' );
+    var currencyObj = document.getElementById( 'donate_wm_2' );
     if( currencyObj )
     {
       var currencySymbols1 = { <?php if ($use_p1) { ?>'<?php echo $wmnum1; ?>': '&#8381;',<?php } ?><?php if ($use_p2) { ?>'<?php echo $wmnum2; ?>': '$',<?php } ?><?php if ($use_p3) { ?>'<?php echo $wmnum3; ?>': '&euro;',<?php } ?><?php if ($use_p4) { ?>'<?php echo $wmnum4; ?>': '&#8372;',<?php } ?><?php if ($use_p5) { ?>'<?php echo $wmnum5; ?>': 'Br'<?php } ?> };
@@ -590,7 +590,7 @@ $symbol2 = $currencies2[ $wm_cur_val ];
 				</div>
 				<div class="cont1" style="text-align: center;">
 <div class="input-prepend"><span class="focus-example1">
-<span id="donate_wm" class="add-on"><?php echo $symbol1; ?></span>
+<span id="donate_wm_2" class="add-on"><?php echo $symbol1; ?></span>
 					<input id="wm-pay-1" class="wm-pay-1" type="number" name="LMI_PAYMENT_AMOUNT" size="3" min="0" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summwm;?>" title="<?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT'); ?>" <?php echo $amofixed;?> />
 </span></div>
 <?php
@@ -899,7 +899,7 @@ if ($choose_cur1) { ?>
 				</div>
 				<div class="focus-example cont1" style="text-align: center;">
       <input type="hidden" name="MrchLogin" value="<?php echo $mrh_login;?>" />
-	  <div class="input-prepend input-append"><span id="donate_wm" class="add-on">&#8381;</span>
+	  <div class="input-prepend input-append"><span id="donate_wm_3" class="add-on">&#8381;</span>
       <input id="robox-pay-1" class="robox-pay-1" type="number" name="outsum" size="16" min="0" max="<?php echo $max_summallin;?>" step="<?php echo $step_summallin;?>" value="<?php echo $all_summout;?>" title="<?php echo JText::_('MOD_AMONEY_A_FIXIXED_AMOUNT'); ?>" readonly="readonly" /><span class="add-on">WMR</span>
 	  </div>
       <input type="hidden" name="InvId" value="<?php echo $inv_id;?>"  />
