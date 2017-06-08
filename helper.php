@@ -11,8 +11,8 @@
 ## Title............: AMoney                                                  ##
 ## Description......: Popular WebMoney module for Joomla CMS                  ##
 ## Author...........: Leonidas                                                ##
-## Version..........: 1.1.2                                                   ##
-## Created date.....: 03.09.2015                                              ##
+## Version..........: 2.0.0                                                   ##
+## Created date.....: 24.05.2017                                              ##
 ## Contact info.....: url: www.foto-s.ru / e-mail: leonidas78@mail.ru         ##
 ## Joomla Version...: 2.5.х and 3.1.x Stable and high                         ##
 ## Note.............: This script is a part of AMoney 1.0 package.            ##
@@ -26,7 +26,7 @@ defined('_JEXEC') or die;
 $mainframe = JFactory::getApplication();
 // Link Site
 $linkjuribase = $params->get('linkjuribase', 'true');
-$mosConfig_live_site = JURI::base( $linkjuribase );
+$mosConfig_live_site = JURI::base( $linkjuribase ); 
 
 //css
 $document = JFactory::getDocument();
@@ -57,8 +57,8 @@ $document->addScript($mosConfig_live_site.'modules/mod_amoney/js/jquery-2.1.4.js
 //tipsy - Facebook-style tooltip plugin for jQuery
 if ($params->get('off_tipsy1')==1) {
 $document = JFactory::getDocument();
-$document->addScript($mosConfig_live_site.'modules/mod_amoney/js/jquery.tipsy.js' );
-$document->addScript($mosConfig_live_site.'modules/mod_amoney/js/tipsy.js' );
+$document->addScript($mosConfig_live_site.'modules/mod_amoney/js/jquery.tipsy.js', $type = "text/javascript", $defer = false, $async = true );
+$document->addScript($mosConfig_live_site.'modules/mod_amoney/js/tipsy.js', $type = "text/javascript", $defer = false, $async = true );
 $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css' );
 };
 // Note: please refer: "Powered by Donate-Amoney" - not to remove, if you want to remove, please contact the author of the script!
@@ -270,7 +270,7 @@ $mrh_login = $params->get('mrh_login','demo');
 $mrh_pass1 = $params->get('mrh_pass1','Morbid11');
 $inv_id = $params->get('inv_id', $random_chars1);
 $robox_url_adds = "https://merchant.roboxchange.com/Index.aspx";
-$out_summ = $params->get('out_summ','8.96');
+$out_summ = $params->get('out_summ','10');
 if ($params->get('off_znahsum')==1) {
 $document = JFactory::getDocument();
 $buffer=$document->getBuffer(component);
@@ -327,7 +327,7 @@ $switch_fixed = '<div class="cont1" style="text-align: center;">';
 $switch_fixed .= '<span class="letter">'.JText::_('MOD_AMONEY_FIXED_AMOUNT').'</span>';
 $switch_fixed .= '</div>';
 $switch_fixed .= '<div class="focus-example cont1" style="text-align: center;">
-<div class="input-append"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" min="0" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" readonly="readonly" /><span class="add-on">'.$liq1_currency.'&nbsp;-&nbsp;'.$liq1_currenc1.'</span></div>
+<div class="input-append"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" min="10" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" readonly="readonly" /><span class="add-on">'.$liq1_currency.'&nbsp;-&nbsp;'.$liq1_currenc1.'</span></div>
 <input type="hidden" name="operation_xml" value="'.$operation_xml.'"/>
 <input type="hidden" name="signature" value="'.$signature.'"/>
 </div>';
@@ -338,7 +338,7 @@ $switch_fixed .= '</div>';
 $switch_fixed .= '<div class="cont1" style="text-align: center;">';
 $switch_fixed .= '<input type="hidden" name="version" value="1.2"/>';
 $switch_fixed .= '<input type="hidden" name="merchant_id" value="'.$merchant_id.'"/>';
-$switch_fixed .= '<span class="focus-example1"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" name="amount" min="0" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></span>&nbsp;';
+$switch_fixed .= '<span class="focus-example1"><input id="liqpay-pay-1" class="liqpay-pay-1" type="number" size="3" name="amount" min="10" max="'.$max_summallin.'" step="'.$step_summallin.'" value="'.$all_summliqpay.'" title="'.JText::_('MOD_AMONEY_ENTER_AMOUNT').'" '.$amofixed.' /></span>&nbsp;';
 $switch_fixed .= '<span class="focus-example">';
 $switch_fixed .= '<select id="liqpay-pay-2" class="liqpay-pay-2" name="currency" title="'.JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY').'" style="min-width:30px;">';
 $switch_fixed .= '<optgroup label="'.JText::_('MOD_AMONEY_AMONEY_CHOICE').'">';
