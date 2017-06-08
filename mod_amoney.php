@@ -13,8 +13,8 @@ defined('_JEXEC') or die;
 
 // Leonidas reference parameters
 $mod_name               = "mod_amoney";
-$mod_copyrights_start   = "\n\n<!-- Leonidas \"Donate-Amoney\" Module (v1.1.2) starts here -->\n";
-$mod_copyrights_end     = "\n<!-- Leonidas \"Donate-Amoney\" Module (v1.1.2) ends here -->\n\n";
+$mod_copyrights_start   = "\n\n<!-- Leonidas \"Donate-Amoney\" Module (v2.0.0) starts here -->\n";
+$mod_copyrights_end     = "\n<!-- Leonidas \"Donate-Amoney\" Module (v2.0.0) ends here -->\n\n";
 
 // Include the syndicate functions only once
 require_once __DIR__ . '/helper.php';
