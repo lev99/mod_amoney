@@ -516,17 +516,17 @@ this.hide_all = function()
 	}?>
 		return false;
 	}
-})(jQuery);	
-<?php 
+})(jQuery);
+<?php
 	if ($jammfadtogquery1 == 1)
 		{?>
 jQuery(function($) {
     $('#amoney').on('click', '.south', function(){
-    	$('#amoney .south').removeClass('active'); 
+    	$('#amoney .south').removeClass('active');
     	$(this).addClass('active');
     });
 });
-<?php 
+<?php
 }?>
 /* ]]> */
 </script>
@@ -595,13 +595,13 @@ $symbol2 = $currencies2[ $wm_cur_val ];
 </span></div>
 <?php
 if ($use_p1) {
-  $areas["$wmnum1"] = $wmtype1; 
+  $areas["$wmnum1"] = $wmtype1;
   }
 if ($use_p2) {
-  $areas["$wmnum2"] = $wmtype2; 
+  $areas["$wmnum2"] = $wmtype2;
   }
 if ($use_p3) {
-  $areas["$wmnum3"] = $wmtype3; 
+  $areas["$wmnum3"] = $wmtype3;
   }
 if ($use_p4) {
   $areas["$wmnum4"] = $wmtype4;
@@ -610,7 +610,7 @@ if ($use_p5) {
   $areas["$wmnum5"] = $wmtype5;
 }
 
-if ($wm_val_on == 1) { 
+if ($wm_val_on == 1) {
 print( "<span class=\"focus-example\"><select id=\"wm-pay-2\" class=\"wm-pay-2\" name=\"LMI_PAYEE_PURSE\" title=\"".JText::_('MOD_AMONEY_CHOOSE_A_CURRENCY')."\" style=\"min-width:30px;\" onchange=\"donateChangeCurrency1();\">
 <optgroup label=\"". JText::_('MOD_AMONEY_AMONEY_CHOICE')."\">" );
 
@@ -794,12 +794,12 @@ if ($donate_len == 1) {
     <option value="1"><?php echo JText::_('MOD_AMONEY_WEEKLY');?></option>
     <option value="2"><?php echo JText::_('MOD_AMONEY_MONTHLY');?></option>
     <option value="3"><?php echo JText::_('MOD_AMONEY_ANNUAL');?></option>
-	</optgroup> 
+	</optgroup>
   </select>
 </span>
 	<?php
 	}
-	else if ($donate_len == 0) 
+	else if ($donate_len == 0)
 	{?>
 	<input type="hidden" name="paypallength" value="<?php echo $paypallen_val;?>" />
 	<?php
@@ -813,13 +813,13 @@ if ($donate_len == 1) {
 	<?php echo $copy;?>
 </div>
 </div>
-	<?php 
+	<?php
 	}
-	if ($use_moneybookers) 
+	if ($use_moneybookers)
 	{?>
 <!-- MoneyBookers -->
 <div id="moneybookers" class="amoney" style="width:<?php echo $width_border; ?>%;height:<?php echo $height_border; ?>;text-align: center;">
-<?php 
+<?php
 $currencies3 = array( 'USD' => '$', 'AUD' => '$', 'GBP' => '&pound;', 'CAD' => '$', 'CZK' => 'K&#269;', 'CZK' => 'K&#269;', 'DKK' => 'kr', 'EUR' => '&euro;', 'HKD' => 'HK$', 'HUF' => 'Ft', 'ILS' => '&#8362;', 'JPY' => '&yen;', 'MXN' => '$', 'NZD' => 'NZ$', 'NOK' => 'kr', 'PLN' => 'z&#322;', 'SGD' => 'S$', 'SEK' => 'kr', 'CHF' => 'Fr' );
 $symbol3 = $currencies3[ $currency_moneybookers ];
 ?>
@@ -829,7 +829,7 @@ $symbol3 = $currencies3[ $currency_moneybookers ];
 				</div>
 					<?php echo $off_intrerst; ?>
 				<div class="cont1" style="text-align: center;">
-<?php 
+<?php
 if ($choose_cur1) { ?>
 <script type="text/javascript">
   function donateChangeCurrency2( )
@@ -845,8 +845,8 @@ if ($choose_cur1) { ?>
     }
   }
 </script>
-<?php 
-	} 
+<?php
+	}
 ?>
 					<span class="letter"><?php echo JText::_('MOD_AMONEY_ENTER_AMOUNT1');?></span>
 				</div>
@@ -883,7 +883,7 @@ if ($choose_cur1) { ?>
 	<?php echo $copy;?>
 </div>
 </div>
-	<?php 
+	<?php
 	}
 	if ($use_robox)
 	{?>
@@ -917,7 +917,7 @@ if ($choose_cur1) { ?>
 	<?php echo $copy;?>
 </div>
 </div>
-	<?php 
+	<?php
 	}
 	if ($use_liqpay)
 	{?>
@@ -927,7 +927,7 @@ if ($choose_cur1) { ?>
 				<div class="cont1" style="text-align: center;">
 					<div id="ammh26" class="ctynh15" style="text-align: center;"></div>
 				</div>
-					<?php 
+					<?php
 						echo $off_intrerst;
 						echo $switch_fixed;
 					?>
@@ -939,7 +939,7 @@ if ($choose_cur1) { ?>
 	<?php echo $copy;?>
 </div>
 </div>
-	<?php 
+	<?php
 	}
 	if ($use_smscoin)
 	{?>
@@ -977,7 +977,7 @@ smsDonateInit();
 	<?php echo $copy;?>
 </div>
 </div>
-	<?php 
+	<?php
 	}
 	if ($use_cbank)
 	{?>
@@ -993,8 +993,8 @@ smsDonateInit();
 /* <![CDATA[ */
 function new_window()
 {
-var win=window.open('','_blank','width=800,height=700')  
-win.document.open()  
+var win=window.open('','_blank','width=800,height=700')
+win.document.open()
 win.document.write('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">')
 win.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" lang="ru-ru">')
 win.document.write('<head>')
@@ -1082,7 +1082,7 @@ win.document.close()
 </div>
 	<?php
 	}?>
-<?php 
+<?php
 	if ($exterlink == 2)
 	{?>
 <div id="ampoweredby-external" style="text-align: center;">
