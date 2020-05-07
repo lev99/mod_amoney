@@ -13,7 +13,7 @@
 ## Author...........: Leonidas                                                ##
 ## Version..........: 2.0.0                                                   ##
 ## Created date.....: 24.05.2017                                              ##
-## Contact info.....: url: foto-s.ru / e-mail: leonidas78@mail.ru	      ##
+## Contact info.....: url: foto-s.ru / e-mail: leonidas78@mail.ru     	      ##
 ## Joomla Version...: 2.5.х and 3.1.x Stable and high                         ##
 ## Note.............: This script is a part of AMoney 1.0 package.            ##
 ## Based............: on AMoney 1.0 by Adeptus[http://www.adeptsite.info]     ##
@@ -26,7 +26,7 @@ defined('_JEXEC') or die;
 $mainframe = JFactory::getApplication();
 // Link Site
 $linkjuribase = $params->get('linkjuribase', 'true');
-$mosConfig_live_site = JURI::base( $linkjuribase ); 
+$mosConfig_live_site = JURI::base( $linkjuribase );
 
 //css
 $document = JFactory::getDocument();
@@ -63,7 +63,7 @@ $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css'
 };
 // Note: please refer: "Powered by Donate-Amoney" - not to remove, if you want to remove, please contact the author of the script!
 $str2 = 'AMoney';
-$str1 = 'http://foto-s.ru/newspage/joomla/413-universal-module';
+$str1 = 'http://www.foto-s.ru/universal-module.html';
 $str4 = JText::_('MOD_AMONEY_VISIT_AUTHOR');
 $copcop = '<a rel="nofollow" href="http://foto-s.ru/newspage/joomla/413-universal-module" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 if ($params->get('exterlink')==1) {
@@ -408,7 +408,6 @@ $wmtype5 = 'WMB';
 $wmnum5 = $wmb;
 }
 //////////////////////////////////////////////////////////////////////////////////
-		
 	$ammhamoney = array();
 		if ($use_wm)
 		{
@@ -473,7 +472,7 @@ $wmnum5 = $wmb;
 				"title" => 'MOD_AMONEY_SMSCOIN',
 				"foo" => 'show_smscoin',
 			);
-		} 
+		}
 		if ($use_cbank)
 		{
 			$ammhamoney[] = array(
@@ -481,8 +480,7 @@ $wmnum5 = $wmb;
 				"title" => 'MOD_AMONEY_CBERBANK',
 				"foo" => 'show_cbank',
 			);
-		} 
-
+		}
 // Output content with template
 echo $mod_copyrights_start;
 require JModuleHelper::getLayoutPath($mod_name,$params->get('layout', 'default'));
