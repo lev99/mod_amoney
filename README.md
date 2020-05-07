@@ -1,4 +1,4 @@
-# [AMoney](http://www.foto-s.ru/universal-module.html)
+# [AMoney](http://foto-s.ru/newspage/joomla/413-universal-module)
 
 Module Donate - Amoney for Joomla! 2.5 and 3.x Version v1.1.0 with AJAX functionality.<br />
 The module is designed to organize your site receiving donations (well, or just payments for goods or services ...)
@@ -16,15 +16,15 @@ for Joomla! 1.0 and 1.5 NATIVE
 * Webmoney
 * RBK Money
 * YandexMoney
-* PayPal 
+* PayPal
 * Skrill | Moneybookers
 * ROBOKASSA
-* LiqPay 
-* SMScoin 
-* SavingsBank 
+* LiqPay
+* SMScoin
+* SavingsBank
 
 ## License
 <b>AMoney</b> module designed for [Joomla!](http://www.joomla.org), designed by [Adeptus](http://adeptsite.info), released under the [GNU General Public License](http://www.gnu.org/copyleft/gpl.html).<br /><br />
 Copyright &copy; 2008 Adeptus. All rights reserved.<br />
 Copyright &copy; 2010 Leonidas, made under license from Creative Commons. All rights reserved.<br />
-(Last update: May 24th, 2017 - Version 2.0.0)
+(Last update: September 3th, 2015 - Version 1.1.2)
