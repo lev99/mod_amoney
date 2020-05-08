@@ -63,7 +63,7 @@ $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css'
 };
 // Note: please refer: "Powered by Donate-Amoney" - not to remove, if you want to remove, please contact the author of the script!
 $str2 = 'AMoney';
-$str1 = 'http://www.foto-s.ru/universal-module.html';
+$str1 = 'http://foto-s.ru/newspage/joomla/413-universal-module';
 $str4 = JText::_('MOD_AMONEY_VISIT_AUTHOR');
 $copcop = '<a rel="nofollow" href="http://foto-s.ru/newspage/joomla/413-universal-module" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 if ($params->get('exterlink')==1) {
