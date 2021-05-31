@@ -1,4 +1,4 @@
-# [AMoney](http://foto-s.ru/joomla/universal-module.html)
+# [AMoney](http://foto-s.ru/newspage/joomla/universal-module.html)
 
 Module Donate - Amoney for Joomla! 2.5 and 3.x Version v1.1.0 with AJAX functionality.<br />
 The module is designed to organize your site receiving donations (well, or just payments for goods or services ...)
