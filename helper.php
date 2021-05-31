@@ -63,11 +63,11 @@ $document->addStyleSheet($mosConfig_live_site.'modules/mod_amoney/css/tipsy.css'
 };
 // Note: please refer: "Powered by Donate-Amoney" - not to remove, if you want to remove, please contact the author of the script!
 $str2 = 'AMoney';
-$str1 = 'http://foto-s.ru/newspage/joomla/universal-module';
+$str1 = 'http://foto-s.ru/novosti/joomla/universal-module.html';
 $str4 = JText::_('MOD_AMONEY_VISIT_AUTHOR');
-$copcop = '<a rel="nofollow" href="http://foto-s.ru/newspage/joomla/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
+$copcop = '<a rel="nofollow" href="http://foto-s.ru/novosti/joomla/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 if ($params->get('exterlink')==1) {
-$copycopy='<a rel="nofollow" href="http://foto-s.ru/newspage/joomla/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
+$copycopy='<a rel="nofollow" href="http://foto-s.ru/novosti/joomla/universal-module.html" title="'.$str4.'" rel="nofollow" target="_blank">'.$str2.'</a>';
 $copy= $copycopy; }
 else { $copy=""; };
 $width_border = $params->get('width_border', '100');
